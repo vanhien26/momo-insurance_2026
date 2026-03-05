@@ -1,145 +1,91 @@
-import type { PageSEO, BreadcrumbItem, MetaTemplate } from "@/types/seo";
-import type { InsuranceProduct, InsuranceProductType, InsuranceProvider } from "@/types/insurance";
+import { Metadata } from "next";
+import { registry } from "./registry";
+import { InsuranceProduct, SEOVariableDimension } from "@/types/insurance";
 
-const SITE_URL = "https://momo.vn";
-const SITE_NAME = "MoMo";
-const CURRENT_YEAR = new Date().getFullYear();
+/**
+ * SEO ENGINE - MOMO INSURANCE PLATFORM
+ * Chịu trách nhiệm xử lý logic Programmatic SEO:
+ * 1. Inject biến số vào template (Spinning Content)
+ * 2. Tạo Metadata chuẩn xác cho từng trang pSEO
+ * 3. Sinh ra JSON-LD Schema tương ứng
+ */
 
-export function formatCurrency(value: number): string {
-  return value.toLocaleString("vi-VN", {
-    style: "currency",
-    currency: "VND",
-    maximumFractionDigits: 0,
-  });
-}
-
-export function buildPageSEO(params: {
+interface SEOParams {
   product: InsuranceProduct;
-  type?: InsuranceProductType;
-  seoParam?: string;
-  provider?: InsuranceProvider;
-  customTitle?: string;
-  customDescription?: string;
-}): PageSEO {
-  const { product, type, provider, customTitle, customDescription } = params;
-
-  const breadcrumbs: BreadcrumbItem[] = [
-    { label: "Trang chủ", href: "/" },
-    { label: "Bảo hiểm", href: "/bao-hiem" },
-    { label: product.name, href: `/${product.slug}` },
-  ];
-
-  if (type) {
-    breadcrumbs.push({
-      label: type.name,
-      href: `/${product.slug}/${type.slug}`,
-    });
-  }
-
-  const title =
-    customTitle ||
-    (type
-      ? `${type.name} ${CURRENT_YEAR} - So sánh & Mua online | ${SITE_NAME}`
-      : `${product.name} ${CURRENT_YEAR} - So sánh giá & Mua online | ${SITE_NAME}`);
-
-  const description =
-    customDescription ||
-    (type
-      ? `Mua ${type.name.toLowerCase()} online qua MoMo. So sánh ${type.providers.length} nhà bảo hiểm, giá tốt nhất ${CURRENT_YEAR}. Bồi thường nhanh 24h.`
-      : product.description);
-
-  const canonical = type
-    ? `${SITE_URL}/${product.slug}/${type.slug}`
-    : `${SITE_URL}/${product.slug}`;
-
-  const schema = buildSchemaMarkup({ product, type, provider, breadcrumbs });
-
-  return { title, description, canonical, schema, breadcrumbs };
+  typeSlug?: string;
+  seoParam?: string; // e.g., 'toyota', 'ha-noi'
 }
 
-function buildSchemaMarkup(params: {
-  product: InsuranceProduct;
-  type?: InsuranceProductType;
-  provider?: InsuranceProvider;
-  breadcrumbs: BreadcrumbItem[];
-}): Record<string, unknown>[] {
-  const schemas: Record<string, unknown>[] = [];
-  const { product, type, provider, breadcrumbs } = params;
+export function buildPageSEO({ product, typeSlug, seoParam }: SEOParams): any {
+  let title = product.metadata.heroTitle;
+  let description = product.description;
+  let breadcrumbs: any[] = [{ label: "Bảo hiểm", href: "/bao-hiem" }, { label: product.name, href: `/${product.slug}` }];
 
-  // BreadcrumbList
-  schemas.push({
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: breadcrumbs.map((item, i) => ({
-      "@type": "ListItem",
-      position: i + 1,
-      name: item.label,
-      item: `${SITE_URL}${item.href}`,
-    })),
+  // Nếu là trang pSEO (có tham số seoParam)
+  if (seoParam && product.seoVariables) {
+    // 1. Tìm xem seoParam thuộc Dimension nào (Brand, Province hay Provider)
+    let activeDim: SEOVariableDimension | undefined;
+    let activeValue: any;
+
+    for (const dim of product.seoVariables.dimensions) {
+      const found = dim.data.find((item) => item.slug === seoParam);
+      if (found) {
+        activeDim = dim;
+        activeValue = found;
+        break;
+      }
+    }
+
+    if (activeDim && activeValue) {
+      // 2. Tìm combination tương ứng để lấy Template
+      const combo = product.seoVariables.combinations.find((c) =>
+        c.dims.includes(activeDim!.dimension)
+      );
+
+      if (combo) {
+        // 3. Thực hiện "Inject" biến số vào Template
+        const replaceMap: Record<string, string> = {
+          [`{${activeDim.dimension}}`]: activeValue.name,
+          "{product}": product.name,
+        };
+
+        title = combo.titlePattern;
+        description = combo.descPattern;
+
+        Object.entries(replaceMap).forEach(([key, val]) => {
+          title = title.replace(new RegExp(key, "g"), val);
+          description = description.replace(new RegExp(key, "g"), val);
+        });
+
+        breadcrumbs.push({ label: activeValue.name, href: "#", active: true });
+      }
+    }
+  }
+
+  return {
+    title: `${title} | MoMo Insurance`,
+    description,
+    breadcrumbs,
+    // Trả về schema mẫu (có thể mở rộng thêm)
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": title,
+        "description": description,
+        "brand": { "@type": "Brand", "name": "MoMo Insurance" }
+      }
+    ]
+  };
+}
+
+/**
+ * Hàm hỗ trợ lấy nội dung Content Spinning cho trang Landing
+ */
+export function getSpunContent(template: string, variables: Record<string, string>) {
+  let content = template;
+  Object.entries(variables).forEach(([key, val]) => {
+    content = content.replace(new RegExp(`{${key}}`, "g"), val);
   });
-
-  // FAQPage
-  if (product.faqs.length > 0) {
-    schemas.push({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: product.faqs.map((faq) => ({
-        "@type": "Question",
-        name: faq.question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: faq.answer,
-        },
-      })),
-    });
-  }
-
-  // Provider Organization
-  if (provider) {
-    schemas.push({
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      name: provider.name,
-      url: provider.website,
-      telephone: provider.hotline,
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: provider.rating,
-        reviewCount: provider.reviewCount,
-        bestRating: 5,
-      },
-    });
-  }
-
-  // Product with AggregateOffer
-  if (type && type.pricingTiers.length > 0) {
-    const prices = type.pricingTiers.map((t) => t.annualPremium);
-    schemas.push({
-      "@context": "https://schema.org",
-      "@type": "Product",
-      name: `${product.name} - ${type.name}`,
-      description: type.shortDesc,
-      brand: { "@type": "Brand", name: "MoMo" },
-      offers: {
-        "@type": "AggregateOffer",
-        lowPrice: Math.min(...prices),
-        highPrice: Math.max(...prices),
-        priceCurrency: "VND",
-        offerCount: type.pricingTiers.length,
-      },
-    });
-  }
-
-  return schemas;
-}
-
-export function interpolateTemplate(
-  template: string,
-  vars: Record<string, string | number>
-): string {
-  let result = template;
-  for (const [key, value] of Object.entries(vars)) {
-    result = result.replaceAll(`{${key}}`, String(value));
-  }
-  return result;
+  return content;
 }

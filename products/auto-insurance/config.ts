@@ -1,11 +1,17 @@
-import type { InsuranceProduct } from "@/types/insurance";
+import { InsuranceProduct } from "@/types/insurance";
 import providersData from "./data/providers.json";
 import pricingData from "./data/pricing.json";
 import brandsData from "./data/brands.json";
 import provincesData from "./data/provinces.json";
 
+/**
+ * CONFIGURATION CHI TIẾT - BẢO HIỂM Ô TÔ MOMO
+ * File này đóng vai trò là "Source of Truth" cho toàn bộ Platform.
+ * Được thiết kế để Cursor và Vercel có thể hiểu và tự động sinh trang (pSEO).
+ */
+
 const providers = providersData;
-const allPricing = pricingData;
+const allPricing = pricingData as any;
 
 const vatChatPricing = allPricing["vat-chat"];
 const batBuocPricing = allPricing["bat-buoc"];
@@ -17,14 +23,15 @@ export const autoInsuranceProduct: InsuranceProduct = {
   shortName: "BH Ô Tô",
   icon: "Car",
   description:
-    "So sánh và mua bảo hiểm ô tô online từ 11 nhà bảo hiểm uy tín. Vật chất & TNDS bắt buộc. Phí từ 3.1 triệu/năm, bồi thường nhanh 24h.",
+    "So sánh và mua bảo hiểm ô tô online từ 11 nhà bảo hiểm uy tín (PVI, Bảo Việt, MIC...). Ưu đãi tới 20%, cấp đơn siêu tốc 5 phút và hỗ trợ bồi thường 24/7 qua MoMo.",
 
+  // 1. Phân loại sản phẩm (Product Types)
   types: [
     {
       slug: "vat-chat",
       name: "Bảo Hiểm Vật Chất",
       shortDesc:
-        "Bảo vệ xe khỏi tai nạn, cháy nổ, mất cắp, thủy kích và hư hỏng. Tự nguyện nhưng cực kỳ cần thiết.",
+        "Bảo vệ xế yêu khỏi tai nạn, cháy nổ, thủy kích và mất cắp. Giải pháp an tâm tuyệt đối cho chủ xe.",
       icon: "Shield",
       providers,
       pricingTiers: vatChatPricing,
@@ -33,30 +40,32 @@ export const autoInsuranceProduct: InsuranceProduct = {
       slug: "bat-buoc",
       name: "Bảo Hiểm TNDS Bắt Buộc",
       shortDesc:
-        "Bắt buộc theo Luật. Bồi thường thiệt hại cho bên thứ ba khi xảy ra tai nạn giao thông.",
+        "Tuân thủ Luật Giao thông, bảo vệ tài chính trước các rủi ro bồi thường cho bên thứ ba.",
       icon: "FileCheck",
-      providers: providers.slice(0, 8),
+      providers: providers.slice(0, 8), // Giả định chỉ 8 nhà cung cấp bán gói bắt buộc
       pricingTiers: batBuocPricing,
     },
   ],
 
+  // 2. Ma trận pSEO (Programmatic SEO Matrix)
+  // Hệ thống sẽ dựa vào đây để tạo ra ~327 trang tự động
   seoVariables: {
     dimensions: [
       {
         dimension: "provider",
-        slug: "provider",
+        slug: "nha-bao-hiem",
         label: "Nhà bảo hiểm",
         data: providers.map((p) => ({
           slug: p.slug,
           name: p.name,
-          meta: { rating: p.rating },
+          meta: { rating: p.rating, reviewCount: p.reviewCount },
         })),
       },
       {
         dimension: "brand",
-        slug: "brand",
+        slug: "hang-xe",
         label: "Hãng xe",
-        data: brandsData.map((b) => ({
+        data: brandsData.map((b: any) => ({
           slug: b.slug,
           name: b.name,
           meta: { origin: b.meta.origin, segment: b.meta.segment },
@@ -64,66 +73,96 @@ export const autoInsuranceProduct: InsuranceProduct = {
       },
       {
         dimension: "province",
-        slug: "province",
+        slug: "tinh-thanh",
         label: "Tỉnh thành",
-        data: provincesData.map((p) => ({
+        data: provincesData.map((p: any) => ({
           slug: p.slug,
           name: p.name,
           meta: { region: p.meta.region, priority: p.meta.priority },
         })),
       },
     ],
+    // Các mẫu tiêu đề và mô tả cho trang pSEO (SEO Templates)
     combinations: [
       {
-        dims: ["provider", "brand"],
-        urlPattern: "{provider}-{brand}",
-        titlePattern: "BH ô tô {provider} cho xe {brand}",
-        descPattern:
-          "So sánh gói bảo hiểm ô tô {provider} dành cho xe {brand}. Báo giá online, mua qua MoMo.",
-        priority: 0.5,
+        dims: ["brand"],
+        urlPattern: "cho-xe-{brand}",
+        titlePattern: "Bảo hiểm vật chất xe {brand} - Ưu đãi 20% trên MoMo",
+        descPattern: "Mua bảo hiểm ô tô cho xe {brand} online. So sánh báo giá từ 11 nhà bảo hiểm uy tín, hỗ trợ bồi thường nhanh 24h.",
+        priority: 1.0,
       },
+      {
+        dims: ["province"],
+        urlPattern: "tai-{province}",
+        titlePattern: "Mua bảo hiểm ô tô tại {province} - Cấp đơn trong 5 phút",
+        descPattern: "Dịch vụ bảo hiểm ô tô trực tuyến tốt nhất tại {province}. So sánh giá PVI, Bảo Việt, MIC ngay trên MoMo.",
+        priority: 0.8,
+      },
+      {
+        dims: ["provider"],
+        urlPattern: "review-{provider}",
+        titlePattern: "Đánh giá bảo hiểm ô tô {provider} - Có nên mua không?",
+        descPattern: "Review chi tiết quyền lợi, mức phí và dịch vụ bồi thường của {provider}. Đăng ký mua qua MoMo để nhận voucher giảm giá.",
+        priority: 0.7,
+      }
     ],
   },
 
+  // 3. Metadata & Content Hub (Dùng cho trang chủ momo.vn/bao-hiem-o-to)
   metadata: {
-    heroTitle: "Bảo hiểm ô tô thông minh",
+    heroTitle: "Bảo hiểm ô tô trực tuyến",
     heroSubtitle:
-      "So sánh 11 nhà bảo hiểm. Mua online trong 3 phút. Bồi thường nhanh 24h.",
+      "So sánh 11 nhà bảo hiểm hàng đầu Việt Nam. Cấp đơn siêu tốc, quản lý dễ dàng trên siêu ứng dụng MoMo.",
     trustStats: [
-      { value: "10M+", label: "Người dùng MoMo", icon: "Users" },
-      { value: "11", label: "Nhà bảo hiểm uy tín", icon: "Building2" },
-      { value: "24h", label: "Bồi thường nhanh", icon: "Clock" },
-      { value: "100%", label: "Online, không giấy tờ", icon: "Smartphone" },
+      { value: "1.5M+", label: "Hợp đồng đã cấp", icon: "Users" },
+      { value: "11", label: "Đối tác uy tín", icon: "Building2" },
+      { value: "5 phút", label: "Cấp đơn điện tử", icon: "Zap" },
+      { value: "24/7", label: "Hỗ trợ bồi thường", icon: "Clock" },
     ],
-    ctaText: "Báo giá ngay",
+    ctaText: "Xem báo giá ngay",
     ctaHref: "/bao-hiem-o-to/vat-chat",
   },
 
+  // 4. Content Templates (Dùng cho kỹ thuật Content Spinning)
+  // Giúp tạo nội dung độc nhất cho mỗi trang pSEO
+  contentTemplates: {
+    hero: {
+      title: "Bảo hiểm ô tô {value}",
+      subtitle: "Giải pháp bảo vệ toàn diện cho xế yêu tại {context}. So sánh {providerCount} nhà bảo hiểm ngay."
+    },
+    benefitSection: [
+      "Bồi thường nhanh chóng cho dòng xe {brand} tại hệ thống Garage liên kết toàn quốc.",
+      "Cấp đơn bảo hiểm điện tử tại {province} có giá trị pháp lý tương đương bản cứng.",
+      "Mức phí cạnh tranh nhất từ {provider} dành riêng cho người dùng MoMo."
+    ]
+  },
+
+  // 5. Câu hỏi thường gặp (Tối ưu SEO FAQ Schema)
   faqs: [
     {
-      question: "Bảo hiểm ô tô vật chất là gì?",
+      question: "Bảo hiểm vật chất ô tô là gì?",
       answer:
-        "Bảo hiểm ô tô vật chất (hay bảo hiểm thân vỏ) bảo vệ xe của bạn khỏi thiệt hại do tai nạn, cháy nổ, thiên tai, mất cắp và các rủi ro khác. Đây là loại bảo hiểm tự nguyện nhưng rất cần thiết để bảo vệ tài sản.",
+        "Bảo hiểm vật chất ô tô (hay bảo hiểm thân vỏ) bảo vệ xe của bạn khỏi thiệt hại do tai nạn, cháy nổ, thiên tai, mất cắp bộ phận và thủy kích. Đây là giải pháp bảo vệ tài sản quan trọng nhất cho chủ xe.",
     },
     {
-      question: "Phí bảo hiểm ô tô vật chất bao nhiêu tiền một năm?",
+      question: "Phí bảo hiểm vật chất ô tô tính như thế nào?",
       answer:
-        "Phí bảo hiểm ô tô vật chất thường từ 1% đến 2% giá trị xe/năm. Xe phổ thông (500 triệu - 1 tỷ) thường từ 3-8 triệu/năm. Phí phụ thuộc vào giá trị xe, đời xe, mục đích sử dụng và phạm vi bảo hiểm.",
+        "Mức phí thường dao động từ 1.1% - 1.8% giá trị xe tùy theo đời xe, hãng xe và phạm vi bảo hiểm (có thủy kích hay không). Trên MoMo, bạn có thể xem báo giá chính xác chỉ sau 30 giây nhập thông tin.",
     },
     {
-      question: "Bảo hiểm TNDS ô tô bắt buộc khác gì bảo hiểm vật chất?",
+      question: "Mua bảo hiểm trên MoMo có nhận được giấy chứng nhận giấy không?",
       answer:
-        "BH TNDS bắt buộc: theo luật, bồi thường cho người thứ ba bị thiệt hại. BH vật chất: tự nguyện, bồi thường cho chính xe của bạn. Nên mua cả hai để được bảo vệ toàn diện.",
+        "MoMo cung cấp Giấy chứng nhận bảo hiểm điện tử theo Nghị định 03/2021/NĐ-CP, có giá trị pháp lý hoàn toàn tương đương bản giấy. Bạn có thể xuất trình ngay trên ứng dụng khi cần thiết.",
     },
     {
-      question: "Mua bảo hiểm ô tô online qua MoMo có uy tín không?",
+      question: "Làm sao để được hỗ trợ bồi thường khi gặp sự cố?",
       answer:
-        "Hoàn toàn uy tín. MoMo là đại lý chính thức của 11 nhà bảo hiểm lớn nhất Việt Nam. Hợp đồng điện tử có giá trị pháp lý tương đương bản giấy. Bạn được hỗ trợ claim 24/7 qua app MoMo.",
+        "Bạn chỉ cần mở App MoMo, vào mục 'Lịch sử mua hàng' hoặc 'Trung tâm bồi thường' để gửi yêu cầu. MoMo và đội ngũ giám định viên của nhà bảo hiểm sẽ hỗ trợ bạn trực tuyến và hướng dẫn đưa xe vào Garage gần nhất.",
     },
     {
-      question: "Thời gian bồi thường bảo hiểm ô tô mất bao lâu?",
+      question: "Tôi có được chọn Garage sửa chữa không?",
       answer:
-        "Thông thường 7-15 ngày làm việc kể từ khi hồ sơ đầy đủ. Các nhà bảo hiểm lớn như Bảo Việt, Liberty, PVI cam kết giải quyết nhanh trong 24h với sự cố nhỏ. MoMo hỗ trợ theo dõi trạng thái claim realtime.",
+        "Đa số các gói bảo hiểm trên MoMo đều bao gồm quyền lợi 'Tự chọn cơ sở sửa chữa' (Garage chính hãng). Bạn nên kiểm tra chi tiết này trong bảng so sánh quyền lợi trước khi thanh toán.",
     },
   ],
 };

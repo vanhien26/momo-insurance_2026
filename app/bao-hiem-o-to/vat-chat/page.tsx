@@ -8,7 +8,7 @@ import { FAQAccordion } from "@/components/insurance/FAQAccordion";
 import { InsuranceCTA } from "@/components/insurance/InsuranceCTA";
 import { BreadcrumbNav } from "@/components/insurance/BreadcrumbNav";
 import { SchemaMarkup } from "@/components/insurance/SchemaMarkup";
-import { VehicleInfoForm } from "@/products/auto-insurance/components/VehicleInfoForm";
+import { ClientVehicleInfoForm } from "@/components/insurance/ClientVehicleInfoForm";
 import { buildPageSEO } from "@/lib/seo";
 
 const PRODUCT_SLUG = "bao-hiem-o-to";
@@ -54,7 +54,7 @@ export default function AutoInsuranceVatChatPage() {
       <section className="py-12 bg-surface-secondary">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-card p-8">
-            <VehicleInfoForm onSubmit={(data) => console.log("Submit:", data)} />
+            <ClientVehicleInfoForm />
           </div>
         </div>
       </section>
