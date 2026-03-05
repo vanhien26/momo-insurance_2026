@@ -1,0 +1,308 @@
+{
+  "vat-chat": [
+    {
+      "id": "bv-basic",
+      "providerId": "bao-viet",
+      "label": "Cơ Bản",
+      "annualPremium": 3500000,
+      "coverage": 500000000,
+      "deductible": 1000000,
+      "benefits": [
+        "Tai nạn, va chạm",
+        "Cháy nổ",
+        "Mất cắp toàn bộ",
+        "Thiên tai"
+      ],
+      "popular": false
+    },
+    {
+      "id": "bv-advanced",
+      "providerId": "bao-viet",
+      "label": "Nâng Cao",
+      "annualPremium": 5200000,
+      "coverage": 800000000,
+      "deductible": 500000,
+      "benefits": [
+        "Tất cả gói Cơ Bản",
+        "Thủy kích",
+        "Trầy xước, móp méo",
+        "Kính xe"
+      ],
+      "popular": true
+    },
+    {
+      "id": "bv-premium",
+      "providerId": "bao-viet",
+      "label": "Toàn Diện",
+      "annualPremium": 7800000,
+      "coverage": 1200000000,
+      "deductible": 0,
+      "benefits": [
+        "Tất cả gói Nâng Cao",
+        "Tai nạn lái xe",
+        "Hỗ trợ đường",
+        "Xe thay thế 7 ngày"
+      ],
+      "popular": false
+    },
+    {
+      "id": "liberty-basic",
+      "providerId": "liberty",
+      "label": "AutoCare",
+      "annualPremium": 3800000,
+      "coverage": 600000000,
+      "deductible": 800000,
+      "benefits": [
+        "Tai nạn, va chạm",
+        "Cháy nổ",
+        "Mất cắp",
+        "Thiên tai"
+      ],
+      "popular": false
+    },
+    {
+      "id": "liberty-advanced",
+      "providerId": "liberty",
+      "label": "AutoCare+",
+      "annualPremium": 5500000,
+      "coverage": 900000000,
+      "deductible": 300000,
+      "benefits": [
+        "Tất cả AutoCare",
+        "Thủy kích",
+        "Trầy xước",
+        "Kính",
+        "Phụ kiện"
+      ],
+      "popular": true
+    },
+    {
+      "id": "liberty-premium",
+      "providerId": "liberty",
+      "label": "AutoCare Max",
+      "annualPremium": 8200000,
+      "coverage": 1500000000,
+      "deductible": 0,
+      "benefits": [
+        "Tất cả AutoCare+",
+        "Xe thay thế 14 ngày",
+        "Cứu hộ VIP 24/7"
+      ],
+      "popular": false
+    },
+    {
+      "id": "pvi-basic",
+      "providerId": "pvi",
+      "label": "Cơ Bản",
+      "annualPremium": 3200000,
+      "coverage": 500000000,
+      "deductible": 1000000,
+      "benefits": [
+        "Tai nạn",
+        "Cháy nổ",
+        "Mất cắp"
+      ],
+      "popular": false
+    },
+    {
+      "id": "pvi-advanced",
+      "providerId": "pvi",
+      "label": "Nâng Cao",
+      "annualPremium": 4800000,
+      "coverage": 750000000,
+      "deductible": 500000,
+      "benefits": [
+        "Tất cả gói Cơ Bản",
+        "Thủy kích",
+        "Kính xe",
+        "Phụ kiện"
+      ],
+      "popular": true
+    },
+    {
+      "id": "mic-basic",
+      "providerId": "mic",
+      "label": "Cơ Bản",
+      "annualPremium": 3100000,
+      "coverage": 450000000,
+      "deductible": 1000000,
+      "benefits": [
+        "Tai nạn",
+        "Cháy nổ",
+        "Mất cắp"
+      ],
+      "popular": false
+    },
+    {
+      "id": "mic-advanced",
+      "providerId": "mic",
+      "label": "Nâng Cao",
+      "annualPremium": 4600000,
+      "coverage": 700000000,
+      "deductible": 500000,
+      "benefits": [
+        "Tất cả gói Cơ Bản",
+        "Thủy kích",
+        "Kính",
+        "Trầy xước"
+      ],
+      "popular": true
+    },
+    {
+      "id": "pti-basic",
+      "providerId": "pti",
+      "label": "Tiêu Chuẩn",
+      "annualPremium": 2900000,
+      "coverage": 400000000,
+      "deductible": 1000000,
+      "benefits": [
+        "Tai nạn",
+        "Cháy nổ",
+        "Mất cắp"
+      ],
+      "popular": false
+    },
+    {
+      "id": "pti-advanced",
+      "providerId": "pti",
+      "label": "Mở Rộng",
+      "annualPremium": 4300000,
+      "coverage": 650000000,
+      "deductible": 500000,
+      "benefits": [
+        "Tất cả Tiêu Chuẩn",
+        "Thủy kích",
+        "Kính xe"
+      ],
+      "popular": true
+    },
+    {
+      "id": "generali-premium",
+      "providerId": "generali",
+      "label": "Premium",
+      "annualPremium": 6500000,
+      "coverage": 1000000000,
+      "deductible": 0,
+      "benefits": [
+        "Tai nạn",
+        "Thủy kích",
+        "Kính",
+        "Xe thay thế",
+        "Cứu hộ 24/7"
+      ],
+      "popular": true
+    },
+    {
+      "id": "msig-advanced",
+      "providerId": "msig",
+      "label": "Superior",
+      "annualPremium": 5800000,
+      "coverage": 900000000,
+      "deductible": 300000,
+      "benefits": [
+        "Tai nạn",
+        "Thủy kích",
+        "Kính",
+        "Phụ kiện",
+        "Cứu hộ VIP"
+      ],
+      "popular": true
+    },
+    {
+      "id": "vbi-advanced",
+      "providerId": "vbi",
+      "label": "Nâng Cao",
+      "annualPremium": 4200000,
+      "coverage": 600000000,
+      "deductible": 500000,
+      "benefits": [
+        "Tai nạn",
+        "Thủy kích",
+        "Kính xe"
+      ],
+      "popular": true
+    },
+    {
+      "id": "bic-advanced",
+      "providerId": "bic",
+      "label": "Toàn Diện",
+      "annualPremium": 5000000,
+      "coverage": 800000000,
+      "deductible": 500000,
+      "benefits": [
+        "Tai nạn",
+        "Thủy kích",
+        "Kính",
+        "Garage chính hãng"
+      ],
+      "popular": true
+    },
+    {
+      "id": "bsh-advanced",
+      "providerId": "bsh",
+      "label": "Nâng Cao",
+      "annualPremium": 4500000,
+      "coverage": 700000000,
+      "deductible": 500000,
+      "benefits": [
+        "Tai nạn",
+        "Thủy kích",
+        "Trầy xước",
+        "Kính"
+      ],
+      "popular": true
+    },
+    {
+      "id": "pjico-advanced",
+      "providerId": "pjico",
+      "label": "Mở Rộng",
+      "annualPremium": 4000000,
+      "coverage": 550000000,
+      "deductible": 800000,
+      "benefits": [
+        "Tai nạn",
+        "Thủy kích",
+        "Trầy xước"
+      ],
+      "popular": true
+    }
+  ],
+  "bat-buoc": [
+    {
+      "id": "tnds-duoi-6",
+      "providerId": "all",
+      "label": "Xe dưới 6 chỗ",
+      "annualPremium": 480800,
+      "coverage": 150000000,
+      "deductible": 0,
+      "benefits": [
+        "TNDS bắt buộc theo NĐ 03/2021"
+      ],
+      "popular": true
+    },
+    {
+      "id": "tnds-6-11",
+      "providerId": "all",
+      "label": "Xe 6-11 chỗ",
+      "annualPremium": 795600,
+      "coverage": 150000000,
+      "deductible": 0,
+      "benefits": [
+        "TNDS bắt buộc theo NĐ 03/2021"
+      ],
+      "popular": false
+    },
+    {
+      "id": "tnds-12-24",
+      "providerId": "all",
+      "label": "Xe 12-24 chỗ",
+      "annualPremium": 1270800,
+      "coverage": 150000000,
+      "deductible": 0,
+      "benefits": [
+        "TNDS bắt buộc theo NĐ 03/2021"
+      ],
+      "popular": false
+    }
+  ]
+}

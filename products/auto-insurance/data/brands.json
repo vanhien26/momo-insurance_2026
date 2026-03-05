@@ -1,0 +1,98 @@
+[
+  {
+    "slug": "toyota",
+    "name": "Toyota",
+    "meta": {
+      "origin": "Nhật Bản",
+      "segment": "Phổ thông + Cao cấp"
+    }
+  },
+  {
+    "slug": "hyundai",
+    "name": "Hyundai",
+    "meta": {
+      "origin": "Hàn Quốc",
+      "segment": "Phổ thông"
+    }
+  },
+  {
+    "slug": "kia",
+    "name": "KIA",
+    "meta": {
+      "origin": "Hàn Quốc",
+      "segment": "Phổ thông + CUV"
+    }
+  },
+  {
+    "slug": "mazda",
+    "name": "Mazda",
+    "meta": {
+      "origin": "Nhật Bản",
+      "segment": "Trung cấp"
+    }
+  },
+  {
+    "slug": "honda",
+    "name": "Honda",
+    "meta": {
+      "origin": "Nhật Bản",
+      "segment": "Phổ thông + Trung cấp"
+    }
+  },
+  {
+    "slug": "ford",
+    "name": "Ford",
+    "meta": {
+      "origin": "Mỹ",
+      "segment": "SUV + Bán tải"
+    }
+  },
+  {
+    "slug": "mitsubishi",
+    "name": "Mitsubishi",
+    "meta": {
+      "origin": "Nhật Bản",
+      "segment": "SUV + Bán tải"
+    }
+  },
+  {
+    "slug": "vinfast",
+    "name": "VinFast",
+    "meta": {
+      "origin": "Việt Nam",
+      "segment": "Điện + Phổ thông"
+    }
+  },
+  {
+    "slug": "mercedes",
+    "name": "Mercedes-Benz",
+    "meta": {
+      "origin": "Đức",
+      "segment": "Cao cấp"
+    }
+  },
+  {
+    "slug": "bmw",
+    "name": "BMW",
+    "meta": {
+      "origin": "Đức",
+      "segment": "Cao cấp"
+    }
+  },
+  {
+    "slug": "mg",
+    "name": "MG",
+    "meta": {
+      "origin": "Trung Quốc",
+      "segment": "Phổ thông"
+    }
+  },
+  {
+    "slug": "suzuki",
+    "name": "Suzuki",
+    "meta": {
+      "origin": "Nhật Bản",
+      "segment": "Phổ thông nhỏ"
+    }
+  }
+]

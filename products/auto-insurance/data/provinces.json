@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "ho-chi-minh",
+    "name": "TP. Hồ Chí Minh",
+    "meta": {
+      "region": "Nam",
+      "priority": "P0"
+    }
+  },
+  {
+    "slug": "ha-noi",
+    "name": "Hà Nội",
+    "meta": {
+      "region": "Bắc",
+      "priority": "P0"
+    }
+  },
+  {
+    "slug": "da-nang",
+    "name": "Đà Nẵng",
+    "meta": {
+      "region": "Trung",
+      "priority": "P0"
+    }
+  },
+  {
+    "slug": "hai-phong",
+    "name": "Hải Phòng",
+    "meta": {
+      "region": "Bắc",
+      "priority": "P1"
+    }
+  },
+  {
+    "slug": "can-tho",
+    "name": "Cần Thơ",
+    "meta": {
+      "region": "Nam",
+      "priority": "P1"
+    }
+  },
+  {
+    "slug": "binh-duong",
+    "name": "Bình Dương",
+    "meta": {
+      "region": "Nam",
+      "priority": "P1"
+    }
+  },
+  {
+    "slug": "dong-nai",
+    "name": "Đồng Nai",
+    "meta": {
+      "region": "Nam",
+      "priority": "P1"
+    }
+  },
+  {
+    "slug": "quang-ninh",
+    "name": "Quảng Ninh",
+    "meta": {
+      "region": "Bắc",
+      "priority": "P2"
+    }
+  },
+  {
+    "slug": "khanh-hoa",
+    "name": "Khánh Hòa",
+    "meta": {
+      "region": "Trung",
+      "priority": "P2"
+    }
+  },
+  {
+    "slug": "nghe-an",
+    "name": "Nghệ An",
+    "meta": {
+      "region": "Trung",
+      "priority": "P2"
+    }
+  },
+  {
+    "slug": "thanh-hoa",
+    "name": "Thanh Hóa",
+    "meta": {
+      "region": "Bắc",
+      "priority": "P2"
+    }
+  },
+  {
+    "slug": "ba-ria-vung-tau",
+    "name": "Bà Rịa - Vũng Tàu",
+    "meta": {
+      "region": "Nam",
+      "priority": "P2"
+    }
+  },
+  {
+    "slug": "long-an",
+    "name": "Long An",
+    "meta": {
+      "region": "Nam",
+      "priority": "P2"
+    }
+  },
+  {
+    "slug": "thua-thien-hue",
+    "name": "Thừa Thiên Huế",
+    "meta": {
+      "region": "Trung",
+      "priority": "P2"
+    }
+  },
+  {
+    "slug": "lam-dong",
+    "name": "Lâm Đồng",
+    "meta": {
+      "region": "Nam",
+      "priority": "P2"
+    }
+  }
+]
