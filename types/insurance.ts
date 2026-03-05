@@ -1,6 +1,13 @@
 // ── Core Insurance Types ──
 // Shared across ALL insurance products
 
+import type {
+  SEOVariableMatrix,
+  SEOVariable,
+  SEOVariableItem,
+  CombinationRule,
+} from "./seo";
+
 export interface InsuranceProvider {
   id: string;
   name: string;
@@ -69,4 +76,9 @@ export interface FAQ {
 }
 
 // Re-export SEO types for convenience
-export type { SEOVariableMatrix, SEOVariable, SEOVariableItem, CombinationRule } from "./seo";
+export type {
+  SEOVariableMatrix,
+  SEOVariable,
+  SEOVariableItem,
+  CombinationRule,
+} from "./seo";

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { SEOVariableItem } from "@/types/seo";
 import { notFound } from "next/navigation";
 import { registry } from "@/lib/registry";
 import "@/products/auto-insurance";
@@ -17,11 +18,17 @@ export async function generateStaticParams() {
   return registry.getSEOParams();
 }
 
-function resolveSEOParam(product: NonNullable<ReturnType<typeof registry.get>>, seoParam: string) {
+function resolveSEOParam(
+  product: NonNullable<ReturnType<typeof registry.get>>,
+  seoParam: string
+) {
   // Try provider
   for (const dim of product.seoVariables.dimensions) {
-    const found = dim.data.find((item) => item.slug === seoParam);
-    if (found) return { dimension: dim.dimension, item: found, label: dim.label };
+    const found = dim.data.find(
+      (item: SEOVariableItem) => item.slug === seoParam
+    );
+    if (found)
+      return { dimension: dim.dimension, item: found, label: dim.label };
   }
   return null;
 }

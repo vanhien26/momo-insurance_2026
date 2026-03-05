@@ -7,8 +7,8 @@ import provincesData from "./data/provinces.json";
 const providers = providersData;
 const allPricing = pricingData;
 
-const vatChatPricing = allPricing; // In real app, filter by type
-const batBuocPricing = allPricing.slice(0, 4); // Simplified
+const vatChatPricing = allPricing["vat-chat"];
+const batBuocPricing = allPricing["bat-buoc"];
 
 export const autoInsuranceProduct: InsuranceProduct = {
   id: "auto-insurance",
@@ -59,7 +59,7 @@ export const autoInsuranceProduct: InsuranceProduct = {
         data: brandsData.map((b) => ({
           slug: b.slug,
           name: b.name,
-          meta: { origin: b.origin, segment: b.segment },
+          meta: { origin: b.meta.origin, segment: b.meta.segment },
         })),
       },
       {
@@ -69,7 +69,7 @@ export const autoInsuranceProduct: InsuranceProduct = {
         data: provincesData.map((p) => ({
           slug: p.slug,
           name: p.name,
-          meta: { region: p.region, priority: p.priority },
+          meta: { region: p.meta.region, priority: p.meta.priority },
         })),
       },
     ],

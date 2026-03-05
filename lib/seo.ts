@@ -5,6 +5,14 @@ const SITE_URL = "https://momo.vn";
 const SITE_NAME = "MoMo";
 const CURRENT_YEAR = new Date().getFullYear();
 
+export function formatCurrency(value: number): string {
+  return value.toLocaleString("vi-VN", {
+    style: "currency",
+    currency: "VND",
+    maximumFractionDigits: 0,
+  });
+}
+
 export function buildPageSEO(params: {
   product: InsuranceProduct;
   type?: InsuranceProductType;

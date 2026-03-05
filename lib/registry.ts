@@ -1,4 +1,5 @@
 import type { InsuranceProduct } from "@/types/insurance";
+import type { SEOVariable } from "@/types/seo";
 
 interface StaticParam {
   productSlug: string;
@@ -68,10 +69,10 @@ class ProductRegistry {
           if (combo.dims.length === 2) {
             const [dimA, dimB] = combo.dims;
             const dataA = product.seoVariables.dimensions.find(
-              (d) => d.dimension === dimA
+              (d: SEOVariable) => d.dimension === dimA
             );
             const dataB = product.seoVariables.dimensions.find(
-              (d) => d.dimension === dimB
+              (d: SEOVariable) => d.dimension === dimB
             );
             if (dataA && dataB) {
               for (const a of dataA.data) {

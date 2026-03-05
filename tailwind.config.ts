@@ -2,9 +2,10 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    "./app/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./products/**/*.{ts,tsx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./features/**/*.{js,ts,jsx,tsx,mdx}",
+    "./products/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -15,7 +16,7 @@ const config: Config = {
           200: "#FFC2DF",
           300: "#FF8DC3",
           400: "#FF4DA0",
-          500: "#D82D8B",
+          500: "#D82D8B", // Màu thương hiệu chính
           600: "#B8207A",
           700: "#A5006A",
           800: "#7A004E",
@@ -33,6 +34,7 @@ const config: Config = {
         },
       },
       fontFamily: {
+        // MoMo thường dùng Be Vietnam Pro để hiển thị tiếng Việt cực đẹp
         sans: ['"Be Vietnam Pro"', "system-ui", "sans-serif"],
         display: ['"Be Vietnam Pro"', "system-ui", "sans-serif"],
       },
@@ -62,7 +64,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")], // Hỗ trợ các animation của shadcn
 };
 
 export default config;
