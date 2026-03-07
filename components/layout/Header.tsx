@@ -7,8 +7,9 @@ import { ChevronDown, Menu as MenuIcon } from "lucide-react";
 import brands from "../../products/auto-insurance/data/brands.json";
 import providers from "../../products/auto-insurance/data/providers.json";
 import situations from "../../products/auto-insurance/data/situations.json";
+import motoProviders from "../../products/moto-insurance/data/providers.json";
 
-// ĐỊNH NGHĨA KIỂU DỮ LIỆU ĐỂ HẾT BÁO ĐỎ
+// ĐỊNH NGHĨA KIỂU DỮ LIỆU
 interface NavChild {
   label: string;
   href: string;
@@ -44,9 +45,20 @@ export default function Header() {
         children: providers ? providers.slice(0, 10).map((p: any) => ({ label: p.name, href: `/bao-hiem-o-to/vat-chat/${p.slug}` })) : []
       },
     ],
+    "/bao-hiem-xe-may": [
+      { label: "Bảo hiểm tự nguyện", href: "/bao-hiem-xe-may" },
+      {
+        label: "Đối tác",
+        href: "#",
+        children: motoProviders.map((p: any) => ({ label: p.name, href: `/bao-hiem-xe-may/doi-tac/${p.slug}` }))
+      },
+    ],
     "/bao-hiem": [
-      { label: "Bảo hiểm Ô tô", href: "/bao-hiem-o-to" },
-      { label: "Bảo hiểm Xe máy", href: "/bao-hiem-xe-may" },
+      { label: "BH Ô tô", href: "/bao-hiem-o-to" },
+      { label: "BH Xe máy", href: "/bao-hiem-xe-may" },
+      { label: "BH Y tế", href: "/bao-hiem-y-te" },
+      { label: "BH Sức khỏe+", href: "/bao-hiem-suc-khoe" },
+      { label: "BH Xã hội", href: "/bao-hiem-xa-hoi" },
     ]
   };
 
@@ -81,7 +93,7 @@ export default function Header() {
           ))}
         </nav>
 
-        <Link href="/bao-hiem-o-to/vat-chat" className="bg-momo-500 text-white text-sm font-bold px-6 py-2.5 rounded-full">Báo giá ngay</Link>
+        <Link href="/bao-hiem" className="bg-momo-500 text-white text-sm font-bold px-6 py-2.5 rounded-full hover:bg-momo-600 transition-colors">Mua bảo hiểm</Link>
       </div>
     </header>
   );

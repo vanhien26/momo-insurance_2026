@@ -104,6 +104,11 @@ class ProductRegistry {
       } catch {
         // Products may not be available during build steps
       }
+      try {
+        require("@/products/moto-insurance");
+      } catch {
+        // Products may not be available during build steps
+      }
     }
   }
 }
