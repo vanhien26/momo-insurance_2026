@@ -83,7 +83,7 @@ export default function ClientVehicleInfoForm({
           value={licensePlate}
           onChange={(e) => setLicensePlate(e.target.value)}
           placeholder="VD: 30G-123.45"
-          className="w-full h-12 px-4 rounded-xl border border-slate-200 text-sm font-medium outline-none focus:border-[#D82D8B] focus:ring-1 focus:ring-[#D82D8B]"
+          className="w-full h-12 px-4 rounded-xl border border-slate-200 text-sm font-medium outline-none focus:border-momo-500 focus:ring-1 focus:ring-momo-500"
         />
         {error && (
           <p className="mt-2 text-xs text-red-500 font-medium">{error}</p>
@@ -93,7 +93,7 @@ export default function ClientVehicleInfoForm({
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full h-14 bg-[#D82D8B] text-white font-bold rounded-xl hover:bg-[#b02471] transition-all disabled:opacity-70 disabled:cursor-not-allowed"
+        className="w-full h-14 bg-momo-500 text-white font-bold rounded-xl hover:bg-momo-600 transition-all disabled:opacity-70 disabled:cursor-not-allowed"
       >
         {isSubmitting
           ? "Đang lấy báo giá..."

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { registry } from "@/lib/registry";
 import "@/products/auto-insurance";
 import { ProviderGrid } from "@/components/insurance/ProviderGrid";
+import { ProviderPackageGrid } from "@/components/insurance/ProviderPackageGrid";
 import { FAQAccordion } from "@/components/insurance/FAQAccordion";
 import { InsuranceCTA } from "@/components/insurance/InsuranceCTA";
 import { BreadcrumbNav } from "@/components/insurance/BreadcrumbNav";
@@ -86,6 +87,18 @@ export default async function SEOParamPage({ params }: PageProps) {
   });
   const providers = type.providers;
   const isBrandPage = resolved.dimension === "brand";
+  const isProviderPage = resolved.dimension === "provider";
+
+  // Trang Đối tác: chỉ lấy provider và các gói của đối tác đó
+  const currentProvider = isProviderPage
+    ? providers.find((p) => p.slug === resolvedParams.seoParam)
+    : null;
+  const providerTiers = isProviderPage && currentProvider
+    ? type.pricingTiers.filter(
+        (t) => t.providerId === currentProvider.id || t.providerId === "all"
+      )
+    : [];
+
   const brandData = isBrandPage
     ? getBrandWithModels(resolvedParams.seoParam)
     : null;
@@ -121,12 +134,13 @@ export default async function SEOParamPage({ params }: PageProps) {
                   : resolved.item.name}
               </h1>
               <p className="text-lg text-slate-300 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                So sánh {providers.length} nhà bảo hiểm uy tín. Mua online qua
-                MoMo, cấp đơn 5 phút, bồi thường nhanh 24h.
+                {isProviderPage
+                  ? `Các gói ${type.name.toLowerCase()} tại ${resolved.item.name}. Chọn gói phù hợp và mua ngay qua MoMo.`
+                  : `So sánh ${providers.length} nhà bảo hiểm uy tín. Mua online qua MoMo, cấp đơn 5 phút, bồi thường nhanh 24h.`}
               </p>
             </div>
 
-            {isBrandPage && (
+            {(isBrandPage || isProviderPage) && (
               <div className="w-full lg:w-auto flex-shrink-0 max-w-md">
                 <ClientVehicleInfoForm
                   productSlug={resolvedParams.productSlug}
@@ -196,18 +210,37 @@ export default async function SEOParamPage({ params }: PageProps) {
         />
       )}
 
-      {/* Provider Grid */}
+      {/* Provider page: Grid gói bảo hiểm của đối tác | Brand/Province: Grid tất cả đối tác */}
       <section className="py-16 bg-white" id="provider-grid">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-10 text-center lg:text-left">
-            {providers.length} nhà bảo hiểm uy tín
-          </h2>
-          <ProviderGrid
-            providers={providers}
-            pricingTiers={type.pricingTiers}
-            productSlug={product.slug}
-            typeSlug={type.slug}
-          />
+          {isProviderPage && currentProvider ? (
+            <>
+              <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-2">
+                Các gói {type.name.toLowerCase()} tại {resolved.item.name}
+              </h2>
+              <p className="text-slate-600 mb-10 max-w-2xl">
+                Chọn gói phù hợp, bấm Mua ngay để xác thực xe và điền thông tin người mua
+              </p>
+              <ProviderPackageGrid
+                provider={currentProvider}
+                tiers={providerTiers}
+                productSlug={product.slug}
+                typeSlug={type.slug}
+              />
+            </>
+          ) : (
+            <>
+              <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-10 text-center lg:text-left">
+                {providers.length} nhà bảo hiểm uy tín
+              </h2>
+              <ProviderGrid
+                providers={providers}
+                pricingTiers={type.pricingTiers}
+                productSlug={product.slug}
+                typeSlug={type.slug}
+              />
+            </>
+          )}
         </div>
       </section>
 

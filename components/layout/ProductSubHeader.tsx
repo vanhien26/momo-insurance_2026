@@ -45,7 +45,7 @@ export default function ProductSubHeader() {
               <Link
                 href={item.href}
                 className={`flex items-center gap-1 text-sm font-bold transition-colors ${
-                  pathname === item.href ? "text-[#D82D8B]" : "text-slate-600 hover:text-[#D82D8B]"
+                  pathname === item.href ? "text-momo-500" : "text-slate-600 hover:text-momo-500"
                 }`}
               >
                 {item.label}
@@ -58,7 +58,7 @@ export default function ProductSubHeader() {
                     <Link
                       key={child.label}
                       href={child.href}
-                      className="px-5 py-2 text-sm text-slate-600 hover:bg-pink-50 hover:text-[#D82D8B] transition-colors"
+                      className="px-5 py-2 text-sm text-slate-600 hover:bg-pink-50 hover:text-momo-500 transition-colors"
                     >
                       {child.label}
                     </Link>

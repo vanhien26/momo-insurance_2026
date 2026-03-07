@@ -50,21 +50,21 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white border-b border-slate-100 shadow-sm">
       <div className="container mx-auto px-4 h-16 md:h-20 flex items-center justify-between">
         <Link href="/bao-hiem" className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-[#D82D8B] rounded-xl flex items-center justify-center text-white font-bold text-xl">M</div>
-          <span className="font-bold text-lg text-slate-900 hidden sm:block">MoMo <span className="text-[#D82D8B]">Bảo Hiểm</span></span>
+          <div className="w-10 h-10 bg-momo-500 rounded-xl flex items-center justify-center text-white font-bold text-xl">M</div>
+          <span className="font-bold text-lg text-slate-900 hidden sm:block"><span className="text-momo-500">Bảo Hiểm</span></span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8 h-full">
           {menuItems.map((item) => (
             <div key={item.label} className="relative group h-full flex items-center">
-              <Link href={item.href} className={`flex items-center gap-1 text-sm font-bold ${pathname === item.href ? "text-[#D82D8B]" : "text-slate-600 hover:text-[#D82D8B]"}`}>
+              <Link href={item.href} className={`flex items-center gap-1 text-sm font-bold ${pathname === item.href ? "text-momo-500" : "text-slate-600 hover:text-momo-500"}`}>
                 {item.label}
                 {item.children && <ChevronDown className="w-4 h-4 opacity-40 group-hover:rotate-180 transition-all" />}
               </Link>
               {item.children && item.children.length > 0 && (
                 <div className="absolute top-[75%] left-0 w-60 bg-white border border-slate-100 shadow-2xl rounded-2xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all translate-y-2 group-hover:translate-y-0 z-50">
                   {item.children.map((child) => (
-                    <Link key={child.label} href={child.href} className="block px-5 py-2.5 text-sm text-slate-600 hover:bg-pink-50 hover:text-[#D82D8B]">
+                    <Link key={child.label} href={child.href} className="block px-5 py-2.5 text-sm text-slate-600 hover:bg-pink-50 hover:text-momo-500">
                       {child.label}
                     </Link>
                   ))}
@@ -74,7 +74,7 @@ export default function Header() {
           ))}
         </nav>
 
-        <Link href="/bao-hiem-o-to/vat-chat" className="bg-[#D82D8B] text-white text-sm font-bold px-6 py-2.5 rounded-full">Báo giá ngay</Link>
+        <Link href="/bao-hiem-o-to/vat-chat" className="bg-momo-500 text-white text-sm font-bold px-6 py-2.5 rounded-full">Báo giá ngay</Link>
       </div>
     </header>
   );

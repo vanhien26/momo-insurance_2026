@@ -57,12 +57,12 @@ export default async function ProductTypePage({ params }: PageProps) {
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             <div className="w-full lg:w-1/2 text-center lg:text-left">
-              <span className="inline-block px-4 py-1.5 bg-pink-100 text-[#D82D8B] text-xs font-black uppercase tracking-widest rounded-full mb-6">
+              <span className="inline-block px-4 py-1.5 bg-pink-100 text-momo-500 text-xs font-black uppercase tracking-widest rounded-full mb-6">
                 Bảo vệ toàn diện
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 leading-tight mb-6">
                 {type.name} <br /> 
-                <span className="text-[#D82D8B]">So sánh báo giá 30s</span>
+                <span className="text-momo-500">So sánh báo giá 30s</span>
               </h1>
               <p className="text-lg text-slate-500 mb-8 leading-relaxed max-w-xl">
                 {type.shortDesc} Nhận ngay báo giá từ 11+ nhà bảo hiểm uy tín và quản lý hợp đồng trực tiếp trên siêu ứng dụng MoMo.

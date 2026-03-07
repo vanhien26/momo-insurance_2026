@@ -21,7 +21,7 @@ export function HeroBanner({
           
           {/* CONTENT SIDE */}
           <div className="w-full md:w-3/5 text-center md:text-left space-y-6">
-            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-pink-50 text-[#D82D8B] text-sm font-bold border border-pink-100">
+            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-pink-50 text-momo-500 text-sm font-bold border border-pink-100">
               🛡️ Bảo vệ toàn diện 2026
             </div>
             
@@ -37,7 +37,7 @@ export function HeroBanner({
               <a href={ctaHref} className="w-full sm:w-auto">
                 <Button
                   size="lg"
-                  className="w-full sm:w-auto bg-[#D82D8B] hover:bg-[#b02471] text-white font-bold h-14 px-10 rounded-2xl shadow-xl shadow-pink-200 transition-all hover:-translate-y-1"
+                  className="w-full sm:w-auto bg-momo-500 hover:bg-momo-600 text-white font-bold h-14 px-10 rounded-2xl shadow-xl shadow-pink-200 transition-all hover:-translate-y-1"
                 >
                   {ctaText}
                 </Button>

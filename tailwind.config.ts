@@ -16,7 +16,7 @@ const config: Config = {
           200: "#FFC2DF",
           300: "#FF8DC3",
           400: "#FF4DA0",
-          500: "#D82D8B", // Màu thương hiệu chính
+          500: "#d82f8b", // Màu thương hiệu MoMo
           600: "#B8207A",
           700: "#A5006A",
           800: "#7A004E",

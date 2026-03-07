@@ -10,10 +10,10 @@ export default function Footer() {
           {/* Cột 1: Thương hiệu */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-[#D82D8B] rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-momo-500 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">M</span>
               </div>
-              <span className="font-bold text-xl text-white">MoMo Bảo Hiểm</span>
+              <span className="font-bold text-xl text-white">Bảo Hiểm</span>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
               Nền tảng so sánh và mua bảo hiểm online hàng đầu Việt Nam. Đối tác chính thức của 11+ nhà bảo hiểm uy tín hàng đầu.
@@ -25,12 +25,12 @@ export default function Footer() {
             <h4 className="font-bold text-white mb-6 uppercase text-xs tracking-widest">Sản phẩm</h4>
             <ul className="space-y-3 text-sm">
               <li>
-                <Link href="/bao-hiem-o-to/vat-chat" className="hover:text-[#D82D8B] transition-colors">
+                <Link href="/bao-hiem-o-to/vat-chat" className="hover:text-momo-500 transition-colors">
                   Bảo hiểm Ô Tô Vật Chất
                 </Link>
               </li>
               <li>
-                <Link href="/bao-hiem-o-to/bat-buoc" className="hover:text-[#D82D8B] transition-colors">
+                <Link href="/bao-hiem-o-to/bat-buoc" className="hover:text-momo-500 transition-colors">
                   TNDS Bắt Buộc
                 </Link>
               </li>
@@ -45,17 +45,17 @@ export default function Footer() {
             <h4 className="font-bold text-white mb-6 uppercase text-xs tracking-widest">Kiến thức</h4>
             <ul className="space-y-3 text-sm">
               <li>
-                <Link href="/bao-hiem-o-to/blog" className="hover:text-[#D82D8B] transition-colors">
+                <Link href="/bao-hiem-o-to/blog" className="hover:text-momo-500 transition-colors">
                   Blog Bảo Hiểm Ô Tô
                 </Link>
               </li>
               <li>
-                <Link href="/bao-hiem-o-to#faq" className="hover:text-[#D82D8B] transition-colors">
+                <Link href="/bao-hiem-o-to#faq" className="hover:text-momo-500 transition-colors">
                   Câu hỏi thường gặp
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-[#D82D8B] transition-colors">
+                <Link href="#" className="hover:text-momo-500 transition-colors">
                   Quy trình bồi thường
                 </Link>
               </li>
@@ -67,10 +67,10 @@ export default function Footer() {
             <h4 className="font-bold text-white mb-6 uppercase text-xs tracking-widest">Liên hệ</h4>
             <div className="space-y-3 text-sm">
               <p className="flex items-center gap-2">
-                <span className="text-[#D82D8B] font-bold tracking-wide">Hotline:</span> 1900 636 652
+                <span className="text-momo-500 font-bold tracking-wide">Hotline:</span> 1900 636 652
               </p>
               <p className="flex items-center gap-2">
-                <span className="text-[#D82D8B] font-bold tracking-wide">Email:</span> insurance@momo.vn
+                <span className="text-momo-500 font-bold tracking-wide">Email:</span> insurance@momo.vn
               </p>
               <div className="pt-4 border-t border-gray-800">
                 <p className="text-[11px] text-gray-500 uppercase leading-tight font-medium">
