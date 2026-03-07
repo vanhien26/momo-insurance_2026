@@ -1,0 +1,122 @@
+[
+    {
+        "id": "bao-viet",
+        "name": "Bảo Việt",
+        "slug": "bao-viet",
+        "logo": "/images/providers/bao-viet.png",
+        "rating": 4.5,
+        "reviewCount": 9840,
+        "hotline": "1900 55 88 99",
+        "website": "https://baoviet.com.vn",
+        "description": "Tổng Công ty Bảo hiểm Bảo Việt - thương hiệu bảo hiểm quốc gia, dẫn đầu thị trường bảo hiểm phi nhân thọ tại Việt Nam với hơn 55 năm kinh nghiệm.",
+        "shortDesc": "Thương hiệu quốc gia, dẫn đầu thị trường BH",
+        "features": [
+            "Bồi thường nhanh trong 24h",
+            "Mạng lưới 200+ đại lý toàn quốc",
+            "Hỗ trợ cứu hộ 24/7",
+            "Cấp giấy chứng nhận điện tử"
+        ],
+        "founded": 1965,
+        "origin": "Việt Nam"
+    },
+    {
+        "id": "pvi",
+        "name": "PVI",
+        "slug": "pvi",
+        "logo": "/images/providers/pvi.png",
+        "rating": 4.3,
+        "reviewCount": 6720,
+        "hotline": "1900 54 55 00",
+        "website": "https://pvi.com.vn",
+        "description": "Bảo hiểm PVI thuộc Tập đoàn Dầu khí Quốc gia Việt Nam, top 1 thị phần bảo hiểm phi nhân thọ.",
+        "shortDesc": "Dầu khí Quốc gia, top 1 phi nhân thọ",
+        "features": [
+            "Top 1 thị phần BH phi nhân thọ",
+            "Đối tác HDI (Đức)",
+            "Quy trình bồi thường minh bạch",
+            "Phủ sóng 63 tỉnh thành"
+        ],
+        "founded": 1996,
+        "origin": "Việt Nam"
+    },
+    {
+        "id": "pti",
+        "name": "PTI",
+        "slug": "pti",
+        "logo": "/images/providers/pti.png",
+        "rating": 4.2,
+        "reviewCount": 5430,
+        "hotline": "1900 0068",
+        "website": "https://pti.com.vn",
+        "description": "Bảo hiểm Bưu điện PTI với mạng lưới rộng khắp 63 tỉnh thành phố, nổi bật với phí bảo hiểm cạnh tranh.",
+        "shortDesc": "Bưu điện, mạng lưới rộng 63 tỉnh",
+        "features": [
+            "Mạng lưới 63 tỉnh thành",
+            "Giám định tại chỗ nhanh chóng",
+            "Phí bảo hiểm cạnh tranh nhất",
+            "Hỗ trợ online 24/7"
+        ],
+        "founded": 1998,
+        "origin": "Việt Nam"
+    },
+    {
+        "id": "mic",
+        "name": "MIC",
+        "slug": "mic",
+        "logo": "/images/providers/mic.png",
+        "rating": 4.1,
+        "reviewCount": 4820,
+        "hotline": "1900 9477",
+        "website": "https://mic.vn",
+        "description": "Bảo hiểm Quân đội MIC thuộc Viettel, uy tín cao với quy trình bồi thường nhanh chóng, minh bạch.",
+        "shortDesc": "Quân đội, uy tín và bồi thường nhanh",
+        "features": [
+            "Bồi thường trong 3 ngày làm việc",
+            "App MIC Care tiện lợi",
+            "Uy tín quân đội",
+            "Giao hợp đồng tận nơi"
+        ],
+        "founded": 2007,
+        "origin": "Việt Nam"
+    },
+    {
+        "id": "bic",
+        "name": "BIC",
+        "slug": "bic",
+        "logo": "/images/providers/bic.png",
+        "rating": 4.0,
+        "reviewCount": 3950,
+        "hotline": "1900 9456",
+        "website": "https://bic.vn",
+        "description": "BIC là công ty bảo hiểm thuộc Ngân hàng BIDV, mạnh về bancassurance và chương trình ưu đãi cho khách hàng ngân hàng.",
+        "shortDesc": "BIDV, mạnh về bancassurance",
+        "features": [
+            "Mua qua BIDV SmartBanking",
+            "Giảm phí cho khách hàng BIDV",
+            "Quy trình online hoàn toàn",
+            "Hotline hỗ trợ 24/7"
+        ],
+        "founded": 2006,
+        "origin": "Việt Nam"
+    },
+    {
+        "id": "liberty",
+        "name": "Liberty",
+        "slug": "liberty",
+        "logo": "/images/providers/liberty.png",
+        "rating": 4.4,
+        "reviewCount": 5250,
+        "hotline": "1800 5995",
+        "website": "https://libertyinsurance.com.vn",
+        "description": "Liberty Insurance Việt Nam thuộc tập đoàn Liberty Mutual (Mỹ), chuyên về bảo hiểm xe cơ giới với tiêu chuẩn quốc tế.",
+        "shortDesc": "Mỹ, tiêu chuẩn quốc tế, chuyên xe cơ giới",
+        "features": [
+            "Tiêu chuẩn bồi thường quốc tế",
+            "Cứu hộ xe máy 24/7",
+            "Không cần biên bản CA dưới 5 triệu",
+            "Hỗ trợ chi phí y tế người ngồi trên xe"
+        ],
+        "founded": 2005,
+        "origin": "Mỹ"
+    }
+]
