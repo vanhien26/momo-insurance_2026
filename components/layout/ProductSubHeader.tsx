@@ -20,7 +20,7 @@ export default function ProductSubHeader() {
       {
         label: "Hãng xe",
         href: "#",
-        children: brands.map(b => ({ label: b.name, href: `/bao-hiem-o-to/${b.slug}` }))
+        children: brands.map(b => ({ label: b.name, href: `/bao-hiem-o-to/vat-chat/${b.slug}` }))
       },
       {
         label: "Đối tác",
