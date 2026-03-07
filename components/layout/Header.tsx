@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { ChevronDown, Menu as MenuIcon } from "lucide-react";
 import brands from "../../products/auto-insurance/data/brands.json";
@@ -54,13 +55,13 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-slate-100 shadow-sm">
-      <div className="container mx-auto px-4 h-16 md:h-20 flex items-center justify-between">
+      <div className="container mx-auto h-16 md:h-20 flex items-center justify-between">
         <Link href="/bao-hiem" className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-momo-500 rounded-xl flex items-center justify-center text-white font-bold text-xl">M</div>
+          <Image src="/images/momo-logo.webp" alt="MoMo Logo" width={40} height={40} className="object-contain rounded-xl" />
           <span className="font-bold text-lg text-slate-900 hidden sm:block"><span className="text-momo-500">Bảo Hiểm</span></span>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-8 h-full">
+        <nav className="hidden lg:flex items-center gap-6 h-full">
           {menuItems.map((item) => (
             <div key={item.label} className="relative group h-full flex items-center">
               <Link href={item.href} className={`flex items-center gap-1 text-sm font-bold ${pathname === item.href ? "text-momo-500" : "text-slate-600 hover:text-momo-500"}`}>

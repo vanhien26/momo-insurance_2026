@@ -5,7 +5,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#1a1a1a] text-gray-300 border-t border-gray-800">
-      <div className="container mx-auto px-4 py-12 md:py-16">
+      <div className="container mx-auto py-12 md:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-8">
           {/* Cột 1: Thương hiệu */}
           <div className="space-y-4">

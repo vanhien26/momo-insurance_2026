@@ -12,7 +12,7 @@ const PRODUCT_SLUG = "bao-hiem-o-to";
 const TYPE_SLUG = "vat-chat";
 
 export const metadata: Metadata = {
-  title: "Các Tình Huống Bảo Hiểm Vật Chất Ô Tô | MoMo Insurance",
+  title: "Các Tình Huống Bảo Hiểm Vật Chất Ô Tô | Bảo Hiểm MoMo",
   description:
     "Tìm hiểu về các tình huống bảo hiểm vật chất ô tô như thủy kích, va chạm, cháy nổ và các bảo hiểm nào chi trả.",
 };

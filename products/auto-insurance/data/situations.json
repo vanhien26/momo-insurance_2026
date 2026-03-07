@@ -11,9 +11,16 @@
       "Khôi phục nội thất xe",
       "Chi phí tưới rửa, làm khô xe"
     ],
-    "icon": "Waves",
+    "icon": "🌊",
     "color": "blue",
-    "coveringPackages": ["bv-advanced", "bv-premium", "liberty-advanced", "liberty-premium", "pvi-advanced", "pvi-premium"]
+    "coveringPackages": [
+      "bv-advanced",
+      "bv-premium",
+      "liberty-advanced",
+      "liberty-premium",
+      "pvi-advanced",
+      "pvi-premium"
+    ]
   },
   {
     "id": "va-cham",
@@ -27,9 +34,19 @@
       "Sửa chữa cốp xe, cánh ca pô",
       "Sơn lại phần bị hưu hỏng"
     ],
-    "icon": "Zap",
+    "icon": "💥",
     "color": "red",
-    "coveringPackages": ["bv-basic", "bv-advanced", "bv-premium", "liberty-basic", "liberty-advanced", "liberty-premium", "pvi-basic", "pvi-advanced", "pvi-premium"]
+    "coveringPackages": [
+      "bv-basic",
+      "bv-advanced",
+      "bv-premium",
+      "liberty-basic",
+      "liberty-advanced",
+      "liberty-premium",
+      "pvi-basic",
+      "pvi-advanced",
+      "pvi-premium"
+    ]
   },
   {
     "id": "chay-no",
@@ -43,9 +60,19 @@
       "Bảo vệ hành khách trong xe",
       "Đền bù khách bị thương do cháy"
     ],
-    "icon": "Flame",
+    "icon": "🔥",
     "color": "orange",
-    "coveringPackages": ["bv-basic", "bv-advanced", "bv-premium", "liberty-basic", "liberty-advanced", "liberty-premium", "pvi-basic", "pvi-advanced", "pvi-premium"]
+    "coveringPackages": [
+      "bv-basic",
+      "bv-advanced",
+      "bv-premium",
+      "liberty-basic",
+      "liberty-advanced",
+      "liberty-premium",
+      "pvi-basic",
+      "pvi-advanced",
+      "pvi-premium"
+    ]
   },
   {
     "id": "tran-xay-chiec",
@@ -59,9 +86,16 @@
       "Nắn dáng thân xe bị móp",
       "Thay thế các bộ phận nhỏ bị hỏng"
     ],
-    "icon": "Droplet",
+    "icon": "🚗",
     "color": "gray",
-    "coveringPackages": ["bv-advanced", "bv-premium", "liberty-advanced", "liberty-premium", "pvi-advanced", "pvi-premium"]
+    "coveringPackages": [
+      "bv-advanced",
+      "bv-premium",
+      "liberty-advanced",
+      "liberty-premium",
+      "pvi-advanced",
+      "pvi-premium"
+    ]
   },
   {
     "id": "kinh-xe",
@@ -72,12 +106,19 @@
     "coverageDetails": [
       "Thay thế kính chắn gió",
       "Thay thế kính cửa xe",
-      "Thay thế kính hông (side windows)",
+      "Thay thế kính hông",
       "Thay thế kính nhìn gương"
     ],
-    "icon": "AlertTriangle",
+    "icon": "🪟",
     "color": "yellow",
-    "coveringPackages": ["bv-advanced", "bv-premium", "liberty-advanced", "liberty-premium", "pvi-advanced", "pvi-premium"]
+    "coveringPackages": [
+      "bv-advanced",
+      "bv-premium",
+      "liberty-advanced",
+      "liberty-premium",
+      "pvi-advanced",
+      "pvi-premium"
+    ]
   },
   {
     "id": "mat-cap-toan-bo",
@@ -91,9 +132,19 @@
       "Hỗ trợ thủ tục báo cảnh sát",
       "Hỗ trợ tìm kiếm xe bị mất"
     ],
-    "icon": "Lock",
+    "icon": "🔒",
     "color": "red",
-    "coveringPackages": ["bv-basic", "bv-advanced", "bv-premium", "liberty-basic", "liberty-advanced", "liberty-premium", "pvi-basic", "pvi-advanced", "pvi-premium"]
+    "coveringPackages": [
+      "bv-basic",
+      "bv-advanced",
+      "bv-premium",
+      "liberty-basic",
+      "liberty-advanced",
+      "liberty-premium",
+      "pvi-basic",
+      "pvi-advanced",
+      "pvi-premium"
+    ]
   },
   {
     "id": "thien-tai",
@@ -107,9 +158,19 @@
       "Thay thế các bộ phận bị cong vênh",
       "Khôi phục nội thất xe"
     ],
-    "icon": "Cloud",
+    "icon": "⛈️",
     "color": "purple",
-    "coveringPackages": ["bv-basic", "bv-advanced", "bv-premium", "liberty-basic", "liberty-advanced", "liberty-premium", "pvi-basic", "pvi-advanced", "pvi-premium"]
+    "coveringPackages": [
+      "bv-basic",
+      "bv-advanced",
+      "bv-premium",
+      "liberty-basic",
+      "liberty-advanced",
+      "liberty-premium",
+      "pvi-basic",
+      "pvi-advanced",
+      "pvi-premium"
+    ]
   },
   {
     "id": "tai-nan-lai-xe",
@@ -123,9 +184,13 @@
       "Hỗ trợ chi phí phục hồi chức năng",
       "Bảo hiểm tạm thời nếu bị thương"
     ],
-    "icon": "AlertTriangle",
+    "icon": "🚑",
     "color": "red",
-    "coveringPackages": ["bv-premium", "liberty-premium", "pvi-premium"]
+    "coveringPackages": [
+      "bv-premium",
+      "liberty-premium",
+      "pvi-premium"
+    ]
   },
   {
     "id": "ho-tro-duong",
@@ -139,8 +204,12 @@
       "Cấp xăng khi hết xăng trên đường",
       "Tư vấn kỹ thuật 24/7"
     ],
-    "icon": "Wrench",
+    "icon": "🛠️",
     "color": "blue",
-    "coveringPackages": ["bv-premium", "liberty-premium", "pvi-premium"]
+    "coveringPackages": [
+      "bv-premium",
+      "liberty-premium",
+      "pvi-premium"
+    ]
   }
 ]
