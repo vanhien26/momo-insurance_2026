@@ -83,6 +83,18 @@ export interface FAQ {
   answer: string;
 }
 
+export interface Situation {
+  id: string;
+  slug: string;
+  name: string;
+  description: string;
+  detailedDescription: string;
+  coverageDetails: string[];
+  icon: string;
+  color: string;
+  coveringPackages: string[];
+}
+
 // Re-export SEO types for convenience
 export type {
   SEOVariableMatrix,

@@ -8,3 +8,6 @@ export { TrustSignals } from "./TrustSignals";
 export { BreadcrumbNav } from "./BreadcrumbNav";
 export { SchemaMarkup } from "./SchemaMarkup";
 export { ProductTypeCards } from "./ProductTypeCards";
+export { SituationCard } from "./SituationCard";
+export { CoveringInsurances } from "./CoveringInsurances";
+export { SituationsHighlight } from "./SituationsHighlight";

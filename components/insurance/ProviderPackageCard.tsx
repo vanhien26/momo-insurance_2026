@@ -57,7 +57,7 @@ export function ProviderPackageCard({
         </ul>
 
         <Link
-          href={`/${productSlug}/${typeSlug}/mua/${providerSlug}/${tier.id}`}
+          href={`/${productSlug}/${typeSlug}/mua?provider=${providerSlug}&tier=${tier.id}`}
           className="block"
         >
           <Button className="w-full bg-momo-500 hover:bg-momo-600 group-hover:shadow-lg transition-all">

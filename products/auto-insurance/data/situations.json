@@ -1,0 +1,146 @@
+[
+  {
+    "id": "thuy-kich",
+    "slug": "thuy-kich",
+    "name": "Thủy Kích",
+    "description": "Xe bị chìm trong nước do mưa lũ, ngập nước, lao vào sông, hồ hoặc khu vực có mực nước cao.",
+    "detailedDescription": "Thủy kích xảy ra khi xe ô tô bị chìm hoặc ngập nước do các nguyên nhân liên quan đến nước như: mưa lớn gây ngập nước, xe lao vào sông/hồ/ao, chạy qua đập tràn nước dâng cao, ngập nước tại các vùng trũng. Tính năng này sẽ bao gồm chi phí sửa chữa động cơ, hệ thống điện, nội thất khi bị nước làm hư hỏng.",
+    "coverageDetails": [
+      "Sửa chữa động cơ bị nước vào",
+      "Thay thế hệ thống điện, cáp điện",
+      "Khôi phục nội thất xe",
+      "Chi phí tưới rửa, làm khô xe"
+    ],
+    "icon": "Waves",
+    "color": "blue",
+    "coveringPackages": ["bv-advanced", "bv-premium", "liberty-advanced", "liberty-premium", "pvi-advanced", "pvi-premium"]
+  },
+  {
+    "id": "va-cham",
+    "slug": "va-cham",
+    "name": "Va Chạm",
+    "description": "Xe bị hư hỏng do va chạm với xe khác, vật cố định, hoặc các vật rơi xuống từ trên cao.",
+    "detailedDescription": "Va chạm là rủi ro thường gặp nhất khi lái xe. Bảo hiểm vật chất sẽ bao gồm chi phí sửa chữa khi xe bị hư hỏng do va chạm với các phương tiện khác, va chạm với vật cố định như cây, tường, cột điện, hoặc bị vật rơi từ trên cao (gạch, ngói, bảng hiệu) làm hại. Mức đền bù phụ thuộc vào gói bảo hiểm và mức khấu trừ.",
+    "coverageDetails": [
+      "Sửa chữa vỏ, la-zăng, cánh cửa",
+      "Sửa chữa khung gầm bị biến dạng",
+      "Sửa chữa cốp xe, cánh ca pô",
+      "Sơn lại phần bị hưu hỏng"
+    ],
+    "icon": "Zap",
+    "color": "red",
+    "coveringPackages": ["bv-basic", "bv-advanced", "bv-premium", "liberty-basic", "liberty-advanced", "liberty-premium", "pvi-basic", "pvi-advanced", "pvi-premium"]
+  },
+  {
+    "id": "chay-no",
+    "slug": "chay-no",
+    "name": "Cháy Nổ",
+    "description": "Xe bị cháy hoặc nổ do các nguyên nhân như chập điện, va chạm gây tia lửa, hoặc áp lực nhiên liệu cao.",
+    "detailedDescription": "Bảo hiểm cháy nổ bao gồm các trường hợp: xe bị cháy do chập điện hệ thống, bị nổ lốp gây tai nạn, cháy động cơ, nổ bình xăng. Đây là rủi ro có thể gây thiệt hại toàn bộ xe hoặc tử vong cho người lái, hành khách.",
+    "coverageDetails": [
+      "Chi phí sửa chữa sau cháy",
+      "Thay thế các bộ phận bị cháy",
+      "Bảo vệ hành khách trong xe",
+      "Đền bù khách bị thương do cháy"
+    ],
+    "icon": "Flame",
+    "color": "orange",
+    "coveringPackages": ["bv-basic", "bv-advanced", "bv-premium", "liberty-basic", "liberty-advanced", "liberty-premium", "pvi-basic", "pvi-advanced", "pvi-premium"]
+  },
+  {
+    "id": "tran-xay-chiec",
+    "slug": "tran-xay-chiec",
+    "name": "Trầy Xây - Móp Méo",
+    "description": "Xe bị trầy xước bề mặt, móp méo thân thiết hoặc các vết hư hỏng nhỏ không ảnh hưởng đến an toàn.",
+    "detailedDescription": "Trầy xây và móp méo thường xảy ra do tiếp xúc với các vật nhỏ, chạy qua đường gập ghềnh, hoặc xin xút trong gara. Những hư hỏng này có thể khiến xe mất đi vẻ thẩm mỹ. Bảo hiểm vật chất gói nâng cao sẽ hỗ trợ chi phí sửa chữa để khôi phục hình dáng xe.",
+    "coverageDetails": [
+      "Sơn lại vết trầy nhỏ",
+      "Đánh bóng, phục hồi mặt sơn",
+      "Nắn dáng thân xe bị móp",
+      "Thay thế các bộ phận nhỏ bị hỏng"
+    ],
+    "icon": "Droplet",
+    "color": "gray",
+    "coveringPackages": ["bv-advanced", "bv-premium", "liberty-advanced", "liberty-premium", "pvi-advanced", "pvi-premium"]
+  },
+  {
+    "id": "kinh-xe",
+    "slug": "kinh-xe",
+    "name": "Kính Xe Vỡ",
+    "description": "Kính chắn gió, kính cửa, kính hông, hay kính nhìn gương bị vỡ do va chạm hoặc vật ném.",
+    "detailedDescription": "Kính xe vỡ có thể xảy ra do tình cờ gặp vật rơi từ trên cao, va chạm, hoặc bị ném đá. Bảo hiểm vật chất sẽ hỗ trợ chi phí thay thế kính mới, bao gồm chi phí lao động và vật liệu. Đây là hư hỏng khá phổ biến ở các thành phố lớn.",
+    "coverageDetails": [
+      "Thay thế kính chắn gió",
+      "Thay thế kính cửa xe",
+      "Thay thế kính hông (side windows)",
+      "Thay thế kính nhìn gương"
+    ],
+    "icon": "AlertTriangle",
+    "color": "yellow",
+    "coveringPackages": ["bv-advanced", "bv-premium", "liberty-advanced", "liberty-premium", "pvi-advanced", "pvi-premium"]
+  },
+  {
+    "id": "mat-cap-toan-bo",
+    "slug": "mat-cap-toan-bo",
+    "name": "Mất Cắp Toàn Bộ",
+    "description": "Xe bị mất cắp hoàn toàn hoặc bị tháo rời các bộ phận chính để bán rơi.",
+    "detailedDescription": "Mất cắp toàn bộ xảy ra khi chiếc xe bị kẻ gian lấy dắc hoàn toàn. Bảo hiểm sẽ hỗ trợ đền bù giá trị xe theo hợp đồng. Lưu ý: nếu vô-lăng, cốp xe hoặc bộ phận chính bị tháo rời để bán rơi, có thể được coi là mất cắp bộ phận.",
+    "coverageDetails": [
+      "Đền bù toàn giá trị xe",
+      "Bảo vệ mất cắp bộ phận chính",
+      "Hỗ trợ thủ tục báo cảnh sát",
+      "Hỗ trợ tìm kiếm xe bị mất"
+    ],
+    "icon": "Lock",
+    "color": "red",
+    "coveringPackages": ["bv-basic", "bv-advanced", "bv-premium", "liberty-basic", "liberty-advanced", "liberty-premium", "pvi-basic", "pvi-advanced", "pvi-premium"]
+  },
+  {
+    "id": "thien-tai",
+    "slug": "thien-tai",
+    "name": "Thiên Tai",
+    "description": "Xe bị hư hỏng do các hiện tượng thiên nhiên như bão, lốc xoáy, sét, động đất, sụt lún.",
+    "detailedDescription": "Thiên tai bao gồm các hiện tượng thiên nhiên như bão lớn, lốc xoáy, mưa đá, sét đánh, động đất, sụt lún mặt đất. Xe bị hư hỏng do những sự kiện này sẽ được bảo hiểm vật chất hỗ trợ. Lưu ý: các gói bảo hiểm khác nhau có thể có mức giới hạn bảo hiểm khác nhau.",
+    "coverageDetails": [
+      "Sửa chữa hệ thống điện sau sét",
+      "Sửa chữa khung gầm bị teozen",
+      "Thay thế các bộ phận bị cong vênh",
+      "Khôi phục nội thất xe"
+    ],
+    "icon": "Cloud",
+    "color": "purple",
+    "coveringPackages": ["bv-basic", "bv-advanced", "bv-premium", "liberty-basic", "liberty-advanced", "liberty-premium", "pvi-basic", "pvi-advanced", "pvi-premium"]
+  },
+  {
+    "id": "tai-nan-lai-xe",
+    "slug": "tai-nan-lai-xe",
+    "name": "Tai Nạn Lái Xe",
+    "description": "Lái xe bị thương hoặc tử vong do tai nạn giao thông khi lái chiếc xe được bảo hiểm.",
+    "detailedDescription": "Gói bảo hiểm tai nạn lái xe sẽ hỗ trợ chi phí y tế hoặc bồi thường cho gia đình nếu lái xe bị thương hoặc tử vong do tai nạn. Đây là một phần quan trọng của bảo hiểm vật chất toàn diện, giúp bảo vệ cả người lái xe.",
+    "coverageDetails": [
+      "Chi phí cấp cứu và điều trị",
+      "Bồi thường nếu tử vong",
+      "Hỗ trợ chi phí phục hồi chức năng",
+      "Bảo hiểm tạm thời nếu bị thương"
+    ],
+    "icon": "AlertTriangle",
+    "color": "red",
+    "coveringPackages": ["bv-premium", "liberty-premium", "pvi-premium"]
+  },
+  {
+    "id": "ho-tro-duong",
+    "slug": "ho-tro-duong",
+    "name": "Hỗ Trợ Đường Bộ 24/7",
+    "description": "Xe bị hỏng trên đường, cần sửa chữa, cứu hộ, hoặc tư vấn kỹ thuật khi đang lưu thông.",
+    "detailedDescription": "Dịch vụ hỗ trợ đường bộ 24/7 bao gồm: xe bị hỏng bánh, hết xăng, pin hết, khóa chìa khóa trong xe, cần cứu hộ kéo xe, cần thay lốp dự phòng, cần tư vấn kỹ thuật qua điện thoại. Đây là tiện ích rất hữu ích, đặc biệt với những chuyến đi đường dài.",
+    "coverageDetails": [
+      "Cứu hộ, kéo xe đến sửa chữa",
+      "Thay lốp dự phòng tại chỗ",
+      "Cấp xăng khi hết xăng trên đường",
+      "Tư vấn kỹ thuật 24/7"
+    ],
+    "icon": "Wrench",
+    "color": "blue",
+    "coveringPackages": ["bv-premium", "liberty-premium", "pvi-premium"]
+  }
+]

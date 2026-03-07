@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { ChevronDown, Menu as MenuIcon } from "lucide-react";
 import brands from "../../products/auto-insurance/data/brands.json";
 import providers from "../../products/auto-insurance/data/providers.json";
+import situations from "../../products/auto-insurance/data/situations.json";
 
 // ĐỊNH NGHĨA KIỂU DỮ LIỆU ĐỂ HẾT BÁO ĐỎ
 interface NavChild {
@@ -26,6 +27,11 @@ export default function Header() {
       { label: "Vật chất", href: "/bao-hiem-o-to/vat-chat" },
       { label: "TNDS Bắt buộc", href: "/bao-hiem-o-to/bat-buoc" },
       { label: "Blog", href: "/bao-hiem-o-to/blog" },
+      {
+        label: "Tình Huống",
+        href: "/bao-hiem-o-to/vat-chat/tinh-huong",
+        children: (situations as any).slice(0, 8).map((s: any) => ({ label: s.name, href: `/bao-hiem-o-to/vat-chat/tinh-huong/${s.slug}` }))
+      },
       {
         label: "Hãng xe",
         href: "#",

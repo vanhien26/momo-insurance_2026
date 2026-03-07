@@ -8,6 +8,7 @@ import { FAQAccordion } from "@/components/insurance/FAQAccordion";
 import { InsuranceCTA } from "@/components/insurance/InsuranceCTA";
 import { BreadcrumbNav } from "@/components/insurance/BreadcrumbNav";
 import { SchemaMarkup } from "@/components/insurance/SchemaMarkup";
+import { SituationsHighlight } from "@/components/insurance/SituationsHighlight";
 import ClientVehicleInfoForm from "@/components/insurance/ClientVehicleInfoForm";
 import { buildPageSEO } from "@/lib/seo";
 
@@ -43,6 +44,14 @@ export default function AutoInsuranceVatChatPage() {
             {type.name}
           </h1>
           <p className="text-lg text-white/85 max-w-2xl">{type.shortDesc}</p>
+          <div className="mt-8">
+            <a
+              href={`/${PRODUCT_SLUG}/${TYPE_SLUG}/tinh-huong`}
+              className="inline-block bg-white text-momo-600 font-semibold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors"
+            >
+              📋 Xem Các Tình Huống Bảo Hiểm →
+            </a>
+          </div>
         </div>
       </section>
 
@@ -67,6 +76,8 @@ export default function AutoInsuranceVatChatPage() {
           />
         </div>
       </section>
+
+      <SituationsHighlight productSlug={PRODUCT_SLUG} typeSlug={TYPE_SLUG} />
 
       <section className="py-12 bg-surface-secondary">
         <div className="container mx-auto px-4">
