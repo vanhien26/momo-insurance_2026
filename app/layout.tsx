@@ -14,7 +14,8 @@ export const metadata: Metadata = {
   title: "Bảo hiểm ô tô MoMo - So sánh báo giá từ 11+ nhà bảo hiểm",
   description: "Giải pháp bảo vệ xế yêu toàn diện. So sánh báo giá từ Bảo Việt, PVI, MIC... ngay trên MoMo.",
   icons: {
-    icon: "/momo-logo.svg",
+    icon: "/images/momo-logo.webp",
+    apple: "/images/momo-logo.webp",
   },
 };
 

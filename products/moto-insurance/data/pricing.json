@@ -1,0 +1,195 @@
+{
+    "tu-nguyen": [
+        {
+            "id": "bv-tn-co-ban",
+            "providerId": "bao-viet",
+            "label": "Gói Cơ Bản",
+            "annualPremium": 150000,
+            "coverage": 10000000,
+            "deductible": 500000,
+            "benefits": [
+                "Tai nạn, va chạm",
+                "Cháy nổ",
+                "Mất cắp toàn bộ xe",
+                "Bồi thường tối đa 10 triệu"
+            ],
+            "isPopular": false
+        },
+        {
+            "id": "bv-tn-tieu-chuan",
+            "providerId": "bao-viet",
+            "label": "Gói Tiêu Chuẩn",
+            "annualPremium": 280000,
+            "coverage": 20000000,
+            "deductible": 300000,
+            "benefits": [
+                "Tai nạn, va chạm",
+                "Cháy nổ",
+                "Mất cắp toàn bộ xe",
+                "Thiên tai, ngập nước",
+                "Bồi thường tối đa 20 triệu"
+            ],
+            "isPopular": true
+        },
+        {
+            "id": "bv-tn-premium",
+            "providerId": "bao-viet",
+            "label": "Gói Toàn Diện",
+            "annualPremium": 450000,
+            "coverage": 50000000,
+            "deductible": 200000,
+            "benefits": [
+                "Tai nạn, va chạm",
+                "Cháy nổ",
+                "Mất cắp toàn bộ xe",
+                "Thiên tai, ngập nước",
+                "Chi phí y tế người ngồi trên xe",
+                "Bồi thường tối đa 50 triệu"
+            ],
+            "isPopular": false
+        },
+        {
+            "id": "pvi-tn-co-ban",
+            "providerId": "pvi",
+            "label": "Gói Cơ Bản",
+            "annualPremium": 130000,
+            "coverage": 10000000,
+            "deductible": 500000,
+            "benefits": [
+                "Tai nạn, va chạm",
+                "Cháy nổ",
+                "Mất cắp toàn bộ xe",
+                "Bồi thường tối đa 10 triệu"
+            ],
+            "isPopular": false
+        },
+        {
+            "id": "pvi-tn-tieu-chuan",
+            "providerId": "pvi",
+            "label": "Gói Tiêu Chuẩn",
+            "annualPremium": 250000,
+            "coverage": 20000000,
+            "deductible": 300000,
+            "benefits": [
+                "Tai nạn, va chạm",
+                "Cháy nổ",
+                "Mất cắp toàn bộ xe",
+                "Thiên tai, ngập nước",
+                "Bồi thường tối đa 20 triệu"
+            ],
+            "isPopular": true
+        },
+        {
+            "id": "pti-tn-co-ban",
+            "providerId": "pti",
+            "label": "Gói Cơ Bản",
+            "annualPremium": 120000,
+            "coverage": 8000000,
+            "deductible": 500000,
+            "benefits": [
+                "Tai nạn, va chạm",
+                "Cháy nổ",
+                "Mất cắp toàn bộ xe",
+                "Bồi thường tối đa 8 triệu"
+            ],
+            "isPopular": false
+        },
+        {
+            "id": "pti-tn-tieu-chuan",
+            "providerId": "pti",
+            "label": "Gói Tiêu Chuẩn",
+            "annualPremium": 230000,
+            "coverage": 18000000,
+            "deductible": 300000,
+            "benefits": [
+                "Tai nạn, va chạm",
+                "Cháy nổ",
+                "Mất cắp toàn bộ xe",
+                "Thiên tai, ngập nước",
+                "Bồi thường tối đa 18 triệu"
+            ],
+            "isPopular": true
+        },
+        {
+            "id": "mic-tn-co-ban",
+            "providerId": "mic",
+            "label": "Gói Cơ Bản",
+            "annualPremium": 140000,
+            "coverage": 10000000,
+            "deductible": 500000,
+            "benefits": [
+                "Tai nạn, va chạm",
+                "Cháy nổ",
+                "Mất cắp toàn bộ xe",
+                "Bồi thường tối đa 10 triệu"
+            ],
+            "isPopular": false
+        },
+        {
+            "id": "mic-tn-tieu-chuan",
+            "providerId": "mic",
+            "label": "Gói Tiêu Chuẩn",
+            "annualPremium": 260000,
+            "coverage": 20000000,
+            "deductible": 300000,
+            "benefits": [
+                "Tai nạn, va chạm",
+                "Cháy nổ",
+                "Mất cắp toàn bộ xe",
+                "Thiên tai, ngập nước",
+                "Bồi thường tối đa 20 triệu"
+            ],
+            "isPopular": true
+        },
+        {
+            "id": "bic-tn-co-ban",
+            "providerId": "bic",
+            "label": "Gói Cơ Bản",
+            "annualPremium": 125000,
+            "coverage": 10000000,
+            "deductible": 500000,
+            "benefits": [
+                "Tai nạn, va chạm",
+                "Cháy nổ",
+                "Mất cắp toàn bộ xe",
+                "Bồi thường tối đa 10 triệu"
+            ],
+            "isPopular": false
+        },
+        {
+            "id": "liberty-tn-tieu-chuan",
+            "providerId": "liberty",
+            "label": "Gói Tiêu Chuẩn",
+            "annualPremium": 300000,
+            "coverage": 25000000,
+            "deductible": 200000,
+            "benefits": [
+                "Tai nạn, va chạm",
+                "Cháy nổ",
+                "Mất cắp toàn bộ xe",
+                "Thiên tai, ngập nước",
+                "Chi phí y tế người ngồi trên xe",
+                "Bồi thường tối đa 25 triệu"
+            ],
+            "isPopular": true
+        },
+        {
+            "id": "liberty-tn-premium",
+            "providerId": "liberty",
+            "label": "Gói Toàn Diện",
+            "annualPremium": 500000,
+            "coverage": 50000000,
+            "deductible": 100000,
+            "benefits": [
+                "Tai nạn, va chạm",
+                "Cháy nổ",
+                "Mất cắp toàn bộ xe",
+                "Thiên tai, ngập nước",
+                "Chi phí y tế người ngồi trên xe",
+                "Hỗ trợ cứu hộ xe máy 24/7",
+                "Bồi thường tối đa 50 triệu"
+            ],
+            "isPopular": false
+        }
+    ]
+}
