@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 interface HeroBannerProps {
@@ -5,7 +6,6 @@ interface HeroBannerProps {
   subtitle: string;
   ctaText: string;
   ctaHref: string;
-  bgClass?: string;
 }
 
 export function HeroBanner({
@@ -13,36 +13,50 @@ export function HeroBanner({
   subtitle,
   ctaText,
   ctaHref,
-  bgClass = "from-momo-500 to-momo-700",
 }: HeroBannerProps) {
   return (
-    <section
-      className={`relative overflow-hidden bg-gradient-to-br ${bgClass} py-16 md:py-24`}
-    >
-      {/* Decorative circles */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/3" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full translate-y-1/3 -translate-x-1/4" />
-
+    <section className="relative overflow-hidden bg-white py-12 md:py-16 lg:py-24 border-b border-slate-100">
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-2xl">
-          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4 animate-fade-in">
-            {title}
-          </h1>
-          <p className="text-lg md:text-xl text-white/90 mb-8 animate-fade-in [animation-delay:100ms]">
-            {subtitle}
-          </p>
-          <a href={ctaHref}>
-            <Button
-              size="lg"
-              variant="secondary"
-              className="bg-white text-momo-600 hover:bg-gray-50 shadow-elevated animate-fade-in [animation-delay:200ms]"
-            >
-              {ctaText}
-              <svg className="w-5 h-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </Button>
-          </a>
+        <div className="flex flex-col md:flex-row items-center gap-10">
+          
+          {/* CONTENT SIDE */}
+          <div className="w-full md:w-3/5 text-center md:text-left space-y-6">
+            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-pink-50 text-[#D82D8B] text-sm font-bold border border-pink-100">
+              🛡️ Bảo vệ toàn diện 2026
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 leading-[1.1] tracking-tight">
+              {title}
+            </h1>
+            
+            <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl">
+              {subtitle}
+            </p>
+            
+            <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+              <a href={ctaHref} className="w-full sm:w-auto">
+                <Button
+                  size="lg"
+                  className="w-full sm:w-auto bg-[#D82D8B] hover:bg-[#b02471] text-white font-bold h-14 px-10 rounded-2xl shadow-xl shadow-pink-200 transition-all hover:-translate-y-1"
+                >
+                  {ctaText}
+                </Button>
+              </a>
+            </div>
+          </div>
+
+          {/* IMAGE SIDE */}
+          <div className="w-full md:w-2/5 relative h-[300px] md:h-[450px]">
+            <div className="absolute inset-0 bg-gradient-to-tr from-pink-100/50 to-transparent rounded-full blur-3xl -z-10" />
+            <Image
+              src="/images/hero-car.webp"
+              alt="Bảo hiểm ô tô MoMo"
+              fill
+              priority
+              className="object-contain drop-shadow-2xl"
+              sizes="(max-width: 768px) 100vw, 40vw"
+            />
+          </div>
         </div>
       </div>
     </section>

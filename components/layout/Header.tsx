@@ -1,56 +1,80 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { ChevronDown, Menu as MenuIcon } from "lucide-react";
+import brands from "../../products/auto-insurance/data/brands.json";
+import providers from "../../products/auto-insurance/data/providers.json";
 
-export function Header() {
+// ĐỊNH NGHĨA KIỂU DỮ LIỆU ĐỂ HẾT BÁO ĐỎ
+interface NavChild {
+  label: string;
+  href: string;
+}
+
+interface NavItem {
+  label: string;
+  href: string;
+  children?: NavChild[];
+}
+
+export default function Header() {
+  const pathname = usePathname();
+
+  const navigation: Record<string, NavItem[]> = {
+    "/bao-hiem-o-to": [
+      { label: "Vật chất", href: "/bao-hiem-o-to/vat-chat" },
+      { label: "TNDS Bắt buộc", href: "/bao-hiem-o-to/bat-buoc" },
+      { label: "Blog", href: "/bao-hiem-o-to/blog" },
+      {
+        label: "Hãng xe",
+        href: "#",
+        children: brands ? brands.slice(0, 10).map((b: any) => ({ label: b.name, href: `/bao-hiem-o-to/vat-chat/${b.slug}` })) : []
+      },
+      {
+        label: "Đối tác",
+        href: "#",
+        children: providers ? providers.slice(0, 10).map((p: any) => ({ label: p.name, href: `/bao-hiem-o-to/vat-chat/${p.slug}` })) : []
+      },
+    ],
+    "/bao-hiem": [
+      { label: "Bảo hiểm Ô tô", href: "/bao-hiem-o-to" },
+      { label: "Bảo hiểm Xe máy", href: "/bao-hiem-xe-may" },
+    ]
+  };
+
+  const activeKey = Object.keys(navigation).find((key) => pathname?.startsWith(key)) || "/bao-hiem";
+  const menuItems = navigation[activeKey];
+
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/bao-hiem" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-momo-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">M</span>
+    <header className="sticky top-0 z-50 bg-white border-b border-slate-100 shadow-sm">
+      <div className="container mx-auto px-4 h-16 md:h-20 flex items-center justify-between">
+        <Link href="/bao-hiem" className="flex items-center gap-2">
+          <div className="w-10 h-10 bg-[#D82D8B] rounded-xl flex items-center justify-center text-white font-bold text-xl">M</div>
+          <span className="font-bold text-lg text-slate-900 hidden sm:block">MoMo <span className="text-[#D82D8B]">Bảo Hiểm</span></span>
+        </Link>
+
+        <nav className="hidden lg:flex items-center gap-8 h-full">
+          {menuItems.map((item) => (
+            <div key={item.label} className="relative group h-full flex items-center">
+              <Link href={item.href} className={`flex items-center gap-1 text-sm font-bold ${pathname === item.href ? "text-[#D82D8B]" : "text-slate-600 hover:text-[#D82D8B]"}`}>
+                {item.label}
+                {item.children && <ChevronDown className="w-4 h-4 opacity-40 group-hover:rotate-180 transition-all" />}
+              </Link>
+              {item.children && item.children.length > 0 && (
+                <div className="absolute top-[75%] left-0 w-60 bg-white border border-slate-100 shadow-2xl rounded-2xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all translate-y-2 group-hover:translate-y-0 z-50">
+                  {item.children.map((child) => (
+                    <Link key={child.label} href={child.href} className="block px-5 py-2.5 text-sm text-slate-600 hover:bg-pink-50 hover:text-[#D82D8B]">
+                      {child.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
-            <span className="font-bold text-xl text-content">
-              MoMo <span className="text-momo-500">Bảo Hiểm</span>
-            </span>
-          </Link>
+          ))}
+        </nav>
 
-          {/* Nav */}
-          <nav className="hidden md:flex items-center gap-8">
-            <Link
-              href="/bao-hiem-o-to"
-              className="text-sm font-medium text-content-secondary hover:text-momo-600 transition-colors"
-            >
-              BH Ô Tô
-            </Link>
-            <Link
-              href="/bao-hiem-o-to/vat-chat"
-              className="text-sm font-medium text-content-secondary hover:text-momo-600 transition-colors"
-            >
-              Vật Chất
-            </Link>
-            <Link
-              href="/bao-hiem-o-to/bat-buoc"
-              className="text-sm font-medium text-content-secondary hover:text-momo-600 transition-colors"
-            >
-              TNDS Bắt Buộc
-            </Link>
-            <Link
-              href="/bao-hiem-o-to/blog"
-              className="text-sm font-medium text-content-secondary hover:text-momo-600 transition-colors"
-            >
-              Kiến thức
-            </Link>
-          </nav>
-
-          {/* CTA */}
-          <Link
-            href="/bao-hiem-o-to/vat-chat"
-            className="hidden md:inline-flex items-center h-10 px-5 bg-momo-500 text-white text-sm font-semibold rounded-xl hover:bg-momo-600 transition-colors"
-          >
-            Báo giá ngay
-          </Link>
-        </div>
+        <Link href="/bao-hiem-o-to/vat-chat" className="bg-[#D82D8B] text-white text-sm font-bold px-6 py-2.5 rounded-full">Báo giá ngay</Link>
       </div>
     </header>
   );

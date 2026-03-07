@@ -57,6 +57,12 @@ export interface TrustStat {
   icon?: string;
 }
 
+/** Content templates for programmatic SEO / content spinning */
+export interface ContentTemplates {
+  hero?: { title?: string; subtitle?: string };
+  benefitSection?: string[];
+}
+
 export interface InsuranceProduct<TFormData = Record<string, unknown>> {
   id: string;
   slug: string;
@@ -68,6 +74,8 @@ export interface InsuranceProduct<TFormData = Record<string, unknown>> {
   seoVariables: SEOVariableMatrix;
   metadata: ProductMetadata;
   faqs: FAQ[];
+  /** Optional content templates for pSEO pages */
+  contentTemplates?: ContentTemplates;
 }
 
 export interface FAQ {

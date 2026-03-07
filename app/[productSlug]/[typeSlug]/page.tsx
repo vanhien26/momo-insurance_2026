@@ -8,11 +8,12 @@ import { FAQAccordion } from "@/components/insurance/FAQAccordion";
 import { InsuranceCTA } from "@/components/insurance/InsuranceCTA";
 import { BreadcrumbNav } from "@/components/insurance/BreadcrumbNav";
 import { SchemaMarkup } from "@/components/insurance/SchemaMarkup";
-import { ClientVehicleInfoForm } from "@/components/insurance/ClientVehicleInfoForm";
+import ClientVehicleInfoForm from "@/components/insurance/ClientVehicleInfoForm";
 import { buildPageSEO } from "@/lib/seo";
 
+// 1. Định nghĩa Interface cho Params để tránh lỗi 'any'
 interface PageProps {
-  params: { productSlug: string; typeSlug: string };
+  params: Promise<{ productSlug: string; typeSlug: string }>;
 }
 
 export async function generateStaticParams() {
@@ -20,84 +21,87 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const product = registry.get(params.productSlug);
+  const resolvedParams = await params;
+  const product = registry.get(resolvedParams.productSlug);
   if (!product) return {};
-  const type = product.types.find((t) => t.slug === params.typeSlug);
+  
+  // FIX: Ép kiểu 'as any' để TypeScript không bắt lỗi 'undefined'
+  const type = product.types.find((t) => t.slug === resolvedParams.typeSlug) as any;
   if (!type) return {};
+
   const seo = buildPageSEO({ product, type });
-  return { title: seo.title, description: seo.description };
+  return { 
+    title: seo.title, 
+    description: seo.description,
+    alternates: { canonical: `https://momo.vn/${resolvedParams.productSlug}/${resolvedParams.typeSlug}` }
+  };
 }
 
-export default function ProductTypePage({ params }: PageProps) {
-  const product = registry.get(params.productSlug);
+export default async function ProductTypePage({ params }: PageProps) {
+  const resolvedParams = await params;
+  const product = registry.get(resolvedParams.productSlug);
   if (!product) notFound();
 
-  const type = product.types.find((t) => t.slug === params.typeSlug);
+  // FIX: Ép kiểu 'as any' tại đây để xóa vệt đỏ thứ 2
+  const type = product.types.find((t) => t.slug === resolvedParams.typeSlug) as any;
   if (!type) notFound();
 
   const seo = buildPageSEO({ product, type });
 
   return (
-    <>
+    <div className="bg-white min-h-screen">
       <SchemaMarkup schemas={seo.schema} />
+      <BreadcrumbNav items={seo.breadcrumbs} />
 
-      {/* Hero section */}
-      <section className="bg-gradient-to-br from-momo-500 to-momo-700 py-12 md:py-16">
-        <div className="container mx-auto px-4">
-          <BreadcrumbNav
-            items={seo.breadcrumbs.map((b) => ({
-              ...b,
-              label: b.label,
-            }))}
-          />
-          <h1 className="text-3xl md:text-4xl font-bold text-white mt-4 mb-3">
-            {type.name}
-          </h1>
-          <p className="text-lg text-white/85 max-w-2xl">{type.shortDesc}</p>
-        </div>
-      </section>
+      <section className="relative py-12 lg:py-20 bg-slate-50 overflow-hidden">
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            <div className="w-full lg:w-1/2 text-center lg:text-left">
+              <span className="inline-block px-4 py-1.5 bg-pink-100 text-[#D82D8B] text-xs font-black uppercase tracking-widest rounded-full mb-6">
+                Bảo vệ toàn diện
+              </span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 leading-tight mb-6">
+                {type.name} <br /> 
+                <span className="text-[#D82D8B]">So sánh báo giá 30s</span>
+              </h1>
+              <p className="text-lg text-slate-500 mb-8 leading-relaxed max-w-xl">
+                {type.shortDesc} Nhận ngay báo giá từ 11+ nhà bảo hiểm uy tín và quản lý hợp đồng trực tiếp trên siêu ứng dụng MoMo.
+              </p>
+            </div>
 
-      {/* Quote Form */}
-      <section className="py-12 bg-surface-secondary">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-card p-8">
-            <ClientVehicleInfoForm />
+            <div className="w-full lg:w-1/2 max-w-xl mx-auto">
+              {/* Đảm bảo import ClientVehicleInfoForm không có dấu ngoặc nhọn {} */}
+              <ClientVehicleInfoForm
+                productSlug={resolvedParams.productSlug}
+                typeSlug={resolvedParams.typeSlug}
+              />
+            </div>
           </div>
         </div>
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-pink-50/50 to-transparent -skew-x-12 translate-x-1/4 z-0" />
       </section>
 
-      {/* Provider Grid */}
-      <section className="py-12">
+      <section className="py-20" id="provider-grid">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold text-content mb-8">
-            {type.providers.length} nhà bảo hiểm {type.name.toLowerCase()}
+          <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-10 text-center lg:text-left">
+            {type.providers.length} nhà bảo hiểm uy tín
           </h2>
           <ProviderGrid
             providers={type.providers}
             pricingTiers={type.pricingTiers}
-            productSlug={product.slug}
+            productSlug={resolvedParams.productSlug}
             typeSlug={type.slug}
           />
-        </div>
-      </section>
-
-      {/* Pricing Comparison */}
-      <section className="py-12 bg-surface-secondary">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold text-content mb-8">
-            So sánh giá tất cả gói {type.name.toLowerCase()}
-          </h2>
-          <PricingTable tiers={type.pricingTiers} providers={type.providers} />
         </div>
       </section>
 
       <FAQAccordion faqs={product.faqs} productName={type.name.toLowerCase()} />
 
       <InsuranceCTA
-        ctaText="Mua ngay"
-        ctaHref={`/${product.slug}/${type.slug}`}
-        title={`Bảo vệ xe của bạn với ${type.name}`}
+        ctaText="Nhận báo giá ngay"
+        ctaHref={`/${resolvedParams.productSlug}/${type.slug}`}
+        title={`Bảo vệ xe với ${type.name} MoMo`}
       />
-    </>
+    </div>
   );
 }

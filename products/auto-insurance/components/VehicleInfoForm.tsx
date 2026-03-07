@@ -54,7 +54,7 @@ export function VehicleInfoForm({ onSubmit }: VehicleInfoFormProps) {
           <select
             value={form.brand || ""}
             onChange={(e) => update("brand", e.target.value)}
-            className="flex h-11 w-full rounded-xl border border-gray-200 bg-white px-4 text-base focus:outline-none focus:ring-2 focus:ring-momo-500"
+            className="flex h-12 w-full rounded-xl border border-gray-200 bg-white px-4 text-base focus:outline-none focus:ring-2 focus:ring-momo-500"
             required
           >
             <option value="">Chọn hãng xe</option>
@@ -82,7 +82,7 @@ export function VehicleInfoForm({ onSubmit }: VehicleInfoFormProps) {
           <select
             value={form.year}
             onChange={(e) => update("year", Number(e.target.value))}
-            className="flex h-11 w-full rounded-xl border border-gray-200 bg-white px-4 text-base focus:outline-none focus:ring-2 focus:ring-momo-500"
+            className="flex h-12 w-full rounded-xl border border-gray-200 bg-white px-4 text-base focus:outline-none focus:ring-2 focus:ring-momo-500"
           >
             {years.map((y) => (
               <option key={y} value={y}>
@@ -103,11 +103,10 @@ export function VehicleInfoForm({ onSubmit }: VehicleInfoFormProps) {
                 key={s}
                 type="button"
                 onClick={() => update("seats", s)}
-                className={`flex-1 h-11 rounded-xl border text-sm font-medium transition-colors ${
-                  form.seats === s
+                className={`flex-1 h-12 rounded-xl border-2 text-sm font-medium transition-colors ${form.seats === s
                     ? "border-momo-500 bg-momo-50 text-momo-600"
                     : "border-gray-200 text-content-secondary hover:border-gray-300"
-                }`}
+                  } active:scale-95`}
               >
                 {s}
               </button>
@@ -140,11 +139,10 @@ export function VehicleInfoForm({ onSubmit }: VehicleInfoFormProps) {
                 key={opt.value}
                 type="button"
                 onClick={() => update("usage", opt.value)}
-                className={`flex-1 h-11 rounded-xl border text-sm font-medium transition-colors ${
-                  form.usage === opt.value
+                className={`flex-1 min-h-12 px-2 rounded-xl border-2 text-sm font-medium transition-colors ${form.usage === opt.value
                     ? "border-momo-500 bg-momo-50 text-momo-600"
                     : "border-gray-200 text-content-secondary hover:border-gray-300"
-                }`}
+                  } active:scale-95 leading-tight`}
               >
                 {opt.label}
               </button>

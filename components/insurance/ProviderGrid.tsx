@@ -15,7 +15,7 @@ export function ProviderGrid({
   typeSlug,
 }: ProviderGridProps) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
       {providers.map((provider) => {
         const providerTiers = pricingTiers.filter(
           (t) => t.providerId === provider.id

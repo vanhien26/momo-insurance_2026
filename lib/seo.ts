@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { registry } from "./registry";
-import { InsuranceProduct, SEOVariableDimension } from "@/types/insurance";
+import { InsuranceProduct, InsuranceProductType } from "@/types/insurance";
+import type { SEOVariable } from "@/types/seo";
 
 /**
  * SEO ENGINE - MOMO INSURANCE PLATFORM
@@ -12,19 +13,26 @@ import { InsuranceProduct, SEOVariableDimension } from "@/types/insurance";
 
 interface SEOParams {
   product: InsuranceProduct;
+  type?: InsuranceProductType;
   typeSlug?: string;
   seoParam?: string; // e.g., 'toyota', 'ha-noi'
 }
 
-export function buildPageSEO({ product, typeSlug, seoParam }: SEOParams): any {
+export function buildPageSEO({ product, type, typeSlug, seoParam }: SEOParams): any {
   let title = product.metadata.heroTitle;
   let description = product.description;
   let breadcrumbs: any[] = [{ label: "Bảo hiểm", href: "/bao-hiem" }, { label: product.name, href: `/${product.slug}` }];
 
+  if (type) {
+    title = `${type.name} - ${product.name}`;
+    description = type.shortDesc || description;
+    breadcrumbs.push({ label: type.name, href: `/${product.slug}/${type.slug}`, active: !seoParam });
+  }
+
   // Nếu là trang pSEO (có tham số seoParam)
   if (seoParam && product.seoVariables) {
     // 1. Tìm xem seoParam thuộc Dimension nào (Brand, Province hay Provider)
-    let activeDim: SEOVariableDimension | undefined;
+    let activeDim: SEOVariable | undefined;
     let activeValue: any;
 
     for (const dim of product.seoVariables.dimensions) {

@@ -8,7 +8,7 @@ import { FAQAccordion } from "@/components/insurance/FAQAccordion";
 import { InsuranceCTA } from "@/components/insurance/InsuranceCTA";
 import { BreadcrumbNav } from "@/components/insurance/BreadcrumbNav";
 import { SchemaMarkup } from "@/components/insurance/SchemaMarkup";
-import { ClientVehicleInfoForm } from "@/components/insurance/ClientVehicleInfoForm";
+import ClientVehicleInfoForm from "@/components/insurance/ClientVehicleInfoForm";
 import { buildPageSEO } from "@/lib/seo";
 
 const PRODUCT_SLUG = "bao-hiem-o-to";
@@ -38,12 +38,7 @@ export default function AutoInsuranceVatChatPage() {
 
       <section className="bg-gradient-to-br from-momo-500 to-momo-700 py-12 md:py-16">
         <div className="container mx-auto px-4">
-          <BreadcrumbNav
-            items={seo.breadcrumbs.map((b) => ({
-              ...b,
-              label: b.label,
-            }))}
-          />
+          <BreadcrumbNav items={seo.breadcrumbs} />
           <h1 className="text-3xl md:text-4xl font-bold text-white mt-4 mb-3">
             {type.name}
           </h1>
@@ -54,12 +49,12 @@ export default function AutoInsuranceVatChatPage() {
       <section className="py-12 bg-surface-secondary">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-card p-8">
-            <ClientVehicleInfoForm />
+            <ClientVehicleInfoForm productSlug={PRODUCT_SLUG} typeSlug={TYPE_SLUG} />
           </div>
         </div>
       </section>
 
-      <section className="py-12">
+      <section className="py-12" id="provider-grid">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-bold text-content mb-8">
             {type.providers.length} nhà bảo hiểm {type.name.toLowerCase()}

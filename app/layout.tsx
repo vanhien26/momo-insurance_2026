@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google"; // Chuyển sang Inter để ổn định trên Next 14
+import { Inter } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
-// Khởi tạo font Inter
 const inter = Inter({
-  subsets: ["latin", "vietnamese"], // Thêm vietnamese để hiển thị chuẩn nội dung bảo hiểm
+  subsets: ["latin", "vietnamese"],
+  display: "swap", // Tối ưu LCP: Hiển thị chữ ngay lập tức
   variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
-  title: "Bảo hiểm ô tô MoMo - Uy tín và An toàn",
-  description: "Giải pháp bảo vệ xế yêu toàn diện. So sánh báo giá từ 11+ nhà bảo hiểm hàng đầu Việt Nam ngay trên MoMo.",
+  title: "Bảo hiểm ô tô MoMo - So sánh báo giá từ 11+ nhà bảo hiểm",
+  description: "Giải pháp bảo vệ xế yêu toàn diện. So sánh báo giá từ Bảo Việt, PVI, MIC... ngay trên MoMo.",
   icons: {
     icon: "/momo-logo.svg",
   },
@@ -22,11 +24,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi">
-      <body
-        className={`${inter.className} antialiased`}
-      >
-        {children}
+    <html lang="vi" className="scroll-smooth">
+      <body className={`${inter.className} antialiased min-h-screen flex flex-col bg-white text-slate-900`}>
+        <Header />
+        <main className="flex-grow">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

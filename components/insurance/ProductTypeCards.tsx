@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { InsuranceProductType } from "@/types/insurance";
-import { formatCurrency } from "@/lib/seo";
+import { formatCurrency } from "@/lib/utils";
 
 interface ProductTypeCardsProps {
   types: InsuranceProductType[];
