@@ -45,9 +45,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        // MoMo thường dùng Be Vietnam Pro để hiển thị tiếng Việt cực đẹp
-        sans: ['"Be Vietnam Pro"', "system-ui", "sans-serif"],
-        display: ['"Be Vietnam Pro"', "system-ui", "sans-serif"],
+        // MoMo Trust Display - imported from globals.css
+        sans: ["Momo Trust Display", "system-ui", "sans-serif"],
+        display: ["Momo Trust Display", "system-ui", "sans-serif"],
       },
       borderRadius: {
         xl: "0.875rem",
