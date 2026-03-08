@@ -8,6 +8,7 @@ import { Situation } from "@/types/insurance";
 import { BreadcrumbNav } from "@/components/insurance/BreadcrumbNav";
 import { SchemaMarkup } from "@/components/insurance/SchemaMarkup";
 import { CoveringInsurances } from "@/components/insurance/CoveringInsurances";
+import { AutoLinkBuilding } from "@/components/insurance/AutoLinkBuilding";
 import { buildPageSEO } from "@/lib/seo";
 import { Card } from "@/components/ui/card";
 import { Check } from "lucide-react";
@@ -62,17 +63,13 @@ export default function SituationDetailPage({ params }: PageProps) {
     <>
       <SchemaMarkup schemas={seo.schema} />
 
-      <nav className="bg-white border-b border-slate-100">
-        <div className="container mx-auto px-4 py-3 md:py-4">
-          <BreadcrumbNav
-            items={[
-              ...seo.breadcrumbs,
-              { label: "Tình Huống", href: `/${PRODUCT_SLUG}/${TYPE_SLUG}/tinh-huong` },
-              { label: situation.name, href: "" },
-            ]}
-          />
-        </div>
-      </nav>
+      <BreadcrumbNav
+        items={[
+          ...seo.breadcrumbs,
+          { label: "Tình Huống", href: `/${PRODUCT_SLUG}/${TYPE_SLUG}/tinh-huong` },
+          { label: situation.name, href: `/${PRODUCT_SLUG}/${TYPE_SLUG}/tinh-huong/${situation.slug}` },
+        ]}
+      />
 
       <section className="relative h-[280px] md:h-[360px] overflow-hidden">
         <Image
@@ -162,22 +159,36 @@ export default function SituationDetailPage({ params }: PageProps) {
         </div>
       </section>
 
-      <section className="py-12 md:py-16 bg-gray-50">
+      {/* ─── Automation Link Building ─── */}
+      <AutoLinkBuilding
+        currentSituation={situation}
+        allSituations={situations}
+        providers={type.providers}
+        pricingTiers={type.pricingTiers}
+        productSlug={PRODUCT_SLUG}
+        typeSlug={TYPE_SLUG}
+      />
+
+      {/* CTA */}
+      <section className="py-12 md:py-16 bg-gradient-to-br from-momo-500 to-momo-700">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              Cần Tư Vấn Thêm?
+            <h2 className="text-2xl font-bold text-white mb-4">
+              Bảo vệ xe của bạn trước rủi ro {situation.name.toLowerCase()}
             </h2>
-            <p className="text-gray-700 mb-6">
-              Hãy liên hệ với nhân viên hỗ trợ của MoMo Insurance để được tư
-              vấn chi tiết về gói bảo hiểm phù hợp với xe và nhu cầu của bạn.
+            <p className="text-white/80 mb-6">
+              So sánh giá từ nhiều nhà bảo hiểm và mua ngay trên MoMo trong 3 phút.
             </p>
-            <button className="bg-momo-500 hover:bg-momo-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors">
-              Liên Hệ Tư Vấn Miễn Phí
-            </button>
+            <a
+              href={`/${PRODUCT_SLUG}/${TYPE_SLUG}`}
+              className="inline-block bg-white text-momo-600 font-bold py-3 px-8 rounded-xl hover:bg-gray-100 transition-colors"
+            >
+              So sánh & Mua bảo hiểm ngay →
+            </a>
           </div>
         </div>
       </section>
     </>
   );
 }
+

@@ -37,10 +37,11 @@ export default function AutoInsuranceVatChatPage() {
     <>
       <SchemaMarkup schemas={seo.schema} />
 
+      <BreadcrumbNav items={seo.breadcrumbs} />
+
       <section className="bg-gradient-to-br from-momo-500 to-momo-700 py-12 md:py-16">
         <div className="container mx-auto px-4">
-          <BreadcrumbNav items={seo.breadcrumbs} />
-          <h1 className="text-3xl md:text-4xl font-bold text-white mt-4 mb-3">
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">
             {type.name}
           </h1>
           <p className="text-lg text-white/85 max-w-2xl">{type.shortDesc}</p>

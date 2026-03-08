@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,9 +11,7 @@ export default function Footer() {
           {/* Cột 1: Thương hiệu */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-momo-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">M</span>
-              </div>
+              <Image src="/images/momo-logo.webp" alt="MoMo Logo" width={36} height={36} className="rounded-lg object-contain" />
               <span className="font-bold text-xl text-white">Bảo Hiểm</span>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
@@ -35,7 +34,9 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <span className="text-gray-600 italic">Bảo hiểm Xe Máy (Sắp ra mắt)</span>
+                <Link href="/bao-hiem-xe-may" className="hover:text-momo-500 transition-colors">
+                  Bảo hiểm Xe Máy
+                </Link>
               </li>
             </ul>
           </div>
