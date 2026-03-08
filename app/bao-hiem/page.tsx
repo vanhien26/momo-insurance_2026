@@ -59,7 +59,7 @@ const INSURANCE_PRODUCTS = [
     bgLight: "bg-red-50",
     textColor: "text-red-500",
     tags: ["Nội trú", "Ngoại trú"],
-    active: false,
+    active: true,
   },
   {
     name: "Bảo hiểm Sức khỏe+",

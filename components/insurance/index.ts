@@ -11,3 +11,6 @@ export { ProductTypeCards } from "./ProductTypeCards";
 export { SituationCard } from "./SituationCard";
 export { CoveringInsurances } from "./CoveringInsurances";
 export { SituationsHighlight } from "./SituationsHighlight";
+export { HealthInsuranceSearchForm } from "./HealthInsuranceSearchForm";
+export { HealthInsuranceSteps } from "./HealthInsuranceSteps";
+export { HealthInsuranceTestimonials } from "./HealthInsuranceTestimonials";
