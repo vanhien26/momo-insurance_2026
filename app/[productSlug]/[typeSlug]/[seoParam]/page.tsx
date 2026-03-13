@@ -9,7 +9,7 @@ import { FAQAccordion } from "@/components/insurance/FAQAccordion";
 import { InsuranceCTA } from "@/components/insurance/InsuranceCTA";
 import { BreadcrumbNav } from "@/components/insurance/BreadcrumbNav";
 import { SchemaMarkup } from "@/components/insurance/SchemaMarkup";
-import ClientVehicleInfoForm from "@/components/insurance/ClientVehicleInfoForm";
+import LeadCaptureForm from "@/components/insurance/LeadCaptureForm";
 import {
   BrandOverviewBlock,
   ModelGridBlock,
@@ -142,10 +142,11 @@ export default async function SEOParamPage({ params }: PageProps) {
 
             {(isBrandPage || isProviderPage) && (
               <div className="w-full lg:w-auto flex-shrink-0 max-w-md">
-                <ClientVehicleInfoForm
+                <LeadCaptureForm
                   productSlug={resolvedParams.productSlug}
                   typeSlug={resolvedParams.typeSlug}
                 />
+
               </div>
             )}
           </div>
@@ -184,8 +185,8 @@ export default async function SEOParamPage({ params }: PageProps) {
           <ContentBlock
             title={`Mức phí ${type.name.toLowerCase()} cho xe ${resolved.item.name}`}
             paragraphs={[
-              `Phí bảo hiểm cho xe ${resolved.item.name} thường dao động từ 1.1% - 1.8% giá trị xe, tùy theo đời xe, dòng xe và phạm vi bảo hiểm (có thủy kích hay không). Trên MoMo, bạn có thể nhập biển số để nhận báo giá chính xác từ 11+ nhà bảo hiểm trong vòng 30 giây.`,
-              `Các dòng xe ${resolved.item.name} phổ biến tại Việt Nam như Vios, Camry, Innova, Fortuner đều được các nhà bảo hiểm hỗ trợ với mức phí cạnh tranh. So sánh và chọn gói phù hợp ngay trên MoMo.`,
+`Phí bảo hiểm cho xe ${resolved.item.name} thường dao động từ 1.1% - 1.8% giá trị xe, tùy theo đời xe, dòng xe và phạm vi bảo hiểm (có thủy kích hay không). Điền thông tin trên MoMo để nhận tư vấn báo giá từ 11+ nhà bảo hiểm.`,
+              `Các dòng xe ${resolved.item.name} phổ biến tại Việt Nam như Vios, Camry, Innova, Fortuner đều được các nhà bảo hiểm hỗ trợ với mức phí cạnh tranh. So sánh và chọn gói phù hợp ngay trên MoMo.`
             ]}
           />
 

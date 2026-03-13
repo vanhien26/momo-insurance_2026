@@ -81,10 +81,10 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation - centered */}
-          <nav className="hidden lg:flex items-center gap-6 h-full flex-1 ml-12">
+          <nav className="hidden lg:flex items-center gap-3 h-full flex-1 ml-8">
             {menuItems.map((item) => (
-              <div key={item.label} className="relative group h-full flex items-center">
-                <Link href={item.href} className={`flex items-center gap-1 text-sm font-bold ${pathname === item.href ? "text-momo-500" : "text-slate-600 hover:text-momo-500"}`}>
+              <div key={item.label} className="relative group h-full flex items-center flex-shrink-0">
+                <Link href={item.href} className={`flex items-center gap-1 text-sm font-bold whitespace-nowrap px-1 ${pathname === item.href ? "text-momo-500" : "text-slate-600 hover:text-momo-500"}`}>
                   {item.label}
                   {item.children && <ChevronDown className="w-4 h-4 opacity-40 group-hover:rotate-180 transition-all" />}
                 </Link>
@@ -101,14 +101,14 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Download Button - center on desktop, hidden on mobile */}
-          <div className="hidden lg:flex flex-1 justify-center">
+          {/* Download Button - right side on desktop, hidden on mobile */}
+          <div className="hidden lg:flex justify-end ml-auto flex-shrink-0">
             <button
               onClick={() => setShowDownload(true)}
-              className="flex items-center gap-2 bg-momo-500 text-white text-sm font-bold px-6 py-2.5 rounded-full hover:bg-momo-600 transition-colors"
+              className="flex items-center gap-2 bg-momo-500 text-white text-sm font-bold px-6 py-2.5 rounded-full hover:bg-momo-600 transition-colors flex-shrink-0"
             >
-              <Download className="w-4 h-4" />
-              Tải ứng dụng MoMo
+              <Download className="w-4 h-4 flex-shrink-0" />
+              <span className="whitespace-nowrap">Tải ứng dụng MoMo</span>
             </button>
           </div>
 
@@ -138,7 +138,7 @@ export default function Header() {
                   <Link 
                     href={item.href} 
                     onClick={() => setOpenMobileMenu(false)}
-                    className={`block px-4 py-3 text-sm font-bold ${pathname === item.href ? "text-momo-500 bg-pink-50" : "text-slate-600 hover:bg-slate-50"}`}
+                    className={`block px-4 py-3 text-sm font-bold whitespace-nowrap text-ellipsis overflow-hidden ${pathname === item.href ? "text-momo-500 bg-pink-50" : "text-slate-600 hover:bg-slate-50"}`}
                   >
                     {item.label}
                   </Link>

@@ -8,7 +8,7 @@ import { FAQAccordion } from "@/components/insurance/FAQAccordion";
 import { InsuranceCTA } from "@/components/insurance/InsuranceCTA";
 import { BreadcrumbNav } from "@/components/insurance/BreadcrumbNav";
 import { SchemaMarkup } from "@/components/insurance/SchemaMarkup";
-import ClientVehicleInfoForm from "@/components/insurance/ClientVehicleInfoForm";
+import LeadCaptureForm from "@/components/insurance/LeadCaptureForm";
 import { buildPageSEO } from "@/lib/seo";
 
 // 1. Định nghĩa Interface cho Params để tránh lỗi 'any'
@@ -65,16 +65,18 @@ export default async function ProductTypePage({ params }: PageProps) {
                 <span className="text-momo-500">So sánh báo giá 30s</span>
               </h1>
               <p className="text-lg text-slate-500 mb-8 leading-relaxed max-w-xl">
-                {type.shortDesc} Nhận ngay báo giá từ 11+ nhà bảo hiểm uy tín và quản lý hợp đồng trực tiếp trên siêu ứng dụng MoMo.
+                {type.shortDesc} Điền thông tin để nhận tư vấn báo giá từ 11+ nhà bảo hiểm uy tín qua MoMo.
+
               </p>
             </div>
 
             <div className="w-full lg:w-1/2 max-w-xl mx-auto">
               {/* Đảm bảo import ClientVehicleInfoForm không có dấu ngoặc nhọn {} */}
-              <ClientVehicleInfoForm
+              <LeadCaptureForm
                 productSlug={resolvedParams.productSlug}
                 typeSlug={resolvedParams.typeSlug}
               />
+
             </div>
           </div>
         </div>

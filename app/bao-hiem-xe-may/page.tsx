@@ -11,6 +11,7 @@ import { HeroBanner } from "@/components/insurance/HeroBanner";
 import { TrustSignals } from "@/components/insurance/TrustSignals";
 import { FAQAccordion } from "@/components/insurance/FAQAccordion";
 import { InsuranceCTA } from "@/components/insurance/InsuranceCTA";
+import { PaymentMethodHighlight } from "@/components/insurance/PaymentMethodHighlight";
 import { BreadcrumbNav } from "@/components/insurance/BreadcrumbNav";
 import { SchemaMarkup } from "@/components/insurance/SchemaMarkup";
 import { ProviderGrid } from "@/components/insurance/ProviderGrid";
@@ -292,12 +293,19 @@ export default function MotoInsuranceHubPage() {
                 </div>
             </section>
 
-            {/* 7. FAQ */}
+            {/* 7. Payment Method Highlight */}
+            <section className="py-12 bg-gradient-to-b from-white to-slate-50">
+                <div className="container mx-auto px-4 max-w-4xl">
+                    <PaymentMethodHighlight variant="card" />
+                </div>
+            </section>
+
+            {/* 8. FAQ */}
             <section className="py-20 bg-white">
                 <FAQAccordion faqs={product.faqs} productName="bảo hiểm xe máy" />
             </section>
 
-            {/* 8. Footer CTA */}
+            {/* 9. Footer CTA */}
             <InsuranceCTA
                 ctaText={product.metadata.ctaText || "Mua bảo hiểm ngay"}
                 ctaHref="#bao-gia"

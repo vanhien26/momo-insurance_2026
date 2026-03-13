@@ -8,7 +8,7 @@ import { FAQAccordion } from "@/components/insurance/FAQAccordion";
 import { InsuranceCTA } from "@/components/insurance/InsuranceCTA";
 import { BreadcrumbNav } from "@/components/insurance/BreadcrumbNav";
 import { SchemaMarkup } from "@/components/insurance/SchemaMarkup";
-import ClientVehicleInfoForm from "@/components/insurance/ClientVehicleInfoForm";
+import LeadCaptureForm from "@/components/insurance/LeadCaptureForm";
 import { TrustSignalsBlock, ContentBlock } from "@/components/insurance/seo";
 import brandsWithModels from "@/products/auto-insurance/data/brands-with-models.json";
 
@@ -122,15 +122,16 @@ export default async function BrandModelPage({ params }: PageProps) {
                 <span className="text-momo-300">{fullCarName}</span>
               </h1>
               <p className="text-lg text-slate-300 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                So sánh {providers.length} nhà bảo hiểm cho xe {fullCarName}. Nhập
-                biển số để nhận báo giá chính xác trong 30 giây.
+                So sánh {providers.length} nhà bảo hiểm cho xe {fullCarName}. Điền thông tin để nhận tư vấn báo giá chính xác.
+
               </p>
             </div>
             <div className="w-full lg:w-auto flex-shrink-0 max-w-md">
-              <ClientVehicleInfoForm
+              <LeadCaptureForm
                 productSlug={resolvedParams.productSlug}
                 typeSlug={resolvedParams.typeSlug}
               />
+
             </div>
           </div>
         </div>

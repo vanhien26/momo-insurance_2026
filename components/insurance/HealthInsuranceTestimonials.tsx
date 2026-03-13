@@ -69,7 +69,7 @@ export function HealthInsuranceTestimonials() {
 
               {/* Content */}
               <p className="text-slate-700 mb-6 leading-relaxed italic">
-                "{testimonial.content}"
+                &quot;{testimonial.content}&quot;
               </p>
 
               {/* Author */}

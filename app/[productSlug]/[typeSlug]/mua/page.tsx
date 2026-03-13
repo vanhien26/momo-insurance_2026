@@ -17,9 +17,6 @@ export default function MuaBaoHiemPage() {
   const providerSlug = searchParams.get("provider") || "";
   const tierId = searchParams.get("tier") || "";
 
-  const [step, setStep] = useState<1 | 2>(1);
-  const [licensePlate, setLicensePlate] = useState("");
-  const [plateError, setPlateError] = useState("");
   const [buyerName, setBuyerName] = useState("");
   const [buyerPhone, setBuyerPhone] = useState("");
   const [buyerEmail, setBuyerEmail] = useState("");
@@ -32,24 +29,9 @@ export default function MuaBaoHiemPage() {
     { label: "Mua bảo hiểm", href: "#" },
   ];
 
-  const handleScanPlate = () => {
-    // TODO: Mở camera OCR quét biển số xe
-    // Hiện tại mô phỏng - có thể tích hợp Web API MediaDevices.getUserMedia
-    window.alert("Tính năng quét biển số OCR sẽ được tích hợp. Vui lòng nhập thủ công.");
-  };
 
-  const handleStep1Submit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const plate = licensePlate.toUpperCase().replace(/\s+/g, "");
-    if (!plate || plate.length < 5) {
-      setPlateError("Vui lòng nhập biển số xe hợp lệ");
-      return;
-    }
-    setPlateError("");
-    setStep(2);
-  };
 
-  const handleStep2Submit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!buyerName.trim()) {
       setBuyerError("Vui lòng nhập họ tên");
@@ -63,7 +45,8 @@ export default function MuaBaoHiemPage() {
     setIsSubmitting(true);
 
     try {
-      // TODO: Gọi API mua bảo hiểm, chuyển hướng MoMo thanh toán
+      // TODO: Gọi API mua bảo hiểm với provider/tier, chuyển hướng MoMo thanh toán
+      console.log('Purchase lead:', {productSlug, typeSlug, providerSlug, tierId, buyerName, buyerPhone, buyerEmail});
       await new Promise((r) => setTimeout(r, 800));
       router.push(`/${productSlug}/${typeSlug}?purchased=true`);
     } catch {
@@ -90,7 +73,7 @@ export default function MuaBaoHiemPage() {
           <div className="flex items-center gap-2 mb-6">
             <div className="w-2 h-8 bg-momo-500 rounded-full" />
             <h1 className="text-xl font-bold text-slate-900">
-              Xác thực xe & Thông tin người mua
+              Thông tin liên hệ mua bảo hiểm
             </h1>
           </div>
 
@@ -101,63 +84,12 @@ export default function MuaBaoHiemPage() {
             </p>
           </div>
 
-          <div className="flex gap-2 mb-8">
-            <div
-              className={`flex-1 h-2 rounded-full ${step >= 1 ? "bg-momo-500" : "bg-slate-200"}`}
-            />
-            <div
-              className={`flex-1 h-2 rounded-full ${step >= 2 ? "bg-momo-500" : "bg-slate-200"}`}
-            />
-          </div>
-
-          {step === 1 && (
-            <form onSubmit={handleStep1Submit}>
-              <h2 className="font-bold text-slate-900 mb-2">Bước 1: Thông tin xe</h2>
+<form onSubmit={handleSubmit}>
+              <h2 className="font-bold text-slate-900 mb-2">Thông tin liên hệ</h2>
               <p className="text-sm text-slate-500 mb-4">
-                Nhập hoặc quét biển số xe để xác thực
-              </p>
+                Điền thông tin để hoàn tất mua bảo hiểm
+              </p> 
 
-              <div className="flex gap-2 mb-4">
-                <div className="flex-1">
-                  <input
-                    type="text"
-                    value={licensePlate}
-                    onChange={(e) => {
-                      setLicensePlate(e.target.value);
-                      setPlateError("");
-                    }}
-                    placeholder="VD: 30G-123.45"
-                    className="w-full h-12 px-4 rounded-xl border border-slate-200 text-sm font-medium outline-none focus:border-momo-500 focus:ring-1 focus:ring-momo-500"
-                  />
-                  {plateError && (
-                    <p className="mt-2 text-xs text-red-500">{plateError}</p>
-                  )}
-                </div>
-                <button
-                  type="button"
-                  onClick={handleScanPlate}
-                  className="h-12 px-4 rounded-xl border border-slate-200 hover:border-momo-300 hover:bg-momo-50 flex items-center gap-2 text-sm font-medium text-slate-700 transition-colors"
-                >
-                  <Camera className="w-5 h-5" />
-                  Quét OCR
-                </button>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full h-14 bg-momo-500 text-white font-bold rounded-xl hover:bg-momo-600 transition-all"
-              >
-                Tiếp tục
-              </button>
-            </form>
-          )}
-
-          {step === 2 && (
-            <form onSubmit={handleStep2Submit}>
-              <h2 className="font-bold text-slate-900 mb-2">Bước 2: Thông tin người mua</h2>
-              <p className="text-sm text-slate-500 mb-4">
-                Điền thông tin để nhận hợp đồng bảo hiểm
-              </p>
 
               <div className="space-y-4 mb-6">
                 <div>
@@ -203,13 +135,7 @@ export default function MuaBaoHiemPage() {
               )}
 
               <div className="flex gap-3">
-                <button
-                  type="button"
-                  onClick={() => setStep(1)}
-                  className="flex-1 h-14 border border-slate-200 rounded-xl font-bold text-slate-700 hover:bg-slate-50"
-                >
-                  Quay lại
-                </button>
+
                 <button
                   type="submit"
                   disabled={isSubmitting}

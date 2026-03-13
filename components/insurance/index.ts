@@ -14,3 +14,5 @@ export { SituationsHighlight } from "./SituationsHighlight";
 export { HealthInsuranceSearchForm } from "./HealthInsuranceSearchForm";
 export { HealthInsuranceSteps } from "./HealthInsuranceSteps";
 export { HealthInsuranceTestimonials } from "./HealthInsuranceTestimonials";
+export { PaymentMethodHighlight } from "./PaymentMethodHighlight";
+export { PaymentFlexibilityBanner } from "./PaymentFlexibilityBanner";

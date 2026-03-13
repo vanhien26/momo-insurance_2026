@@ -123,6 +123,16 @@ export function PricingTable({ tiers, providers, onSelect }: PricingTableProps) 
           );
         })}
       </div>
+
+      {/* Payment method note */}
+      <div className="mt-8 p-4 bg-gradient-to-r from-amber-50 to-orange-50 rounded-lg border border-amber-200 flex items-center gap-3">
+        <svg className="w-5 h-5 text-amber-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" />
+        </svg>
+        <p className="text-xs text-amber-900">
+          <span className="font-semibold">💳 Mua ngay, thanh toán sau:</span> Hỗ trợ MoMo Ví Trả Sau 0% lãi suất cho tất cả gói. Thanh toán linh hoạt trong 30-60 ngày.
+        </p>
+      </div>
     </div>
   );
 }

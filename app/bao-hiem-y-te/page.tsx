@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { HeartHandshake, CheckCircle2, ShieldPlus, Headset, Clock } from "lucide-react";
+import { HeartHandshake, CheckCircle2, ShieldPlus, Headset, Clock, CalendarCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BreadcrumbNav } from "@/components/insurance/BreadcrumbNav";
 import { SchemaMarkup } from "@/components/insurance/SchemaMarkup";
@@ -46,10 +46,10 @@ export default function HealthInsurancePage() {
   return (
     <div className="bg-white min-h-screen">
       <SchemaMarkup schemas={schema} />
-      
+
       {/* 1. Breadcrumb */}
       <BreadcrumbNav items={breadcrumbs} />
-      
+
       {/* 2. Hero Banner with Search Form */}
       <section className="py-12 md:py-16 lg:py-24 bg-gradient-to-b from-white via-pink-50/30 to-white border-b border-slate-100">
         <div className="container mx-auto px-4">
@@ -59,11 +59,11 @@ export default function HealthInsurancePage() {
               <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-pink-50 text-momo-500 text-sm font-bold border border-pink-100">
                 💚 Bảo vệ sức khỏe toàn gia đình
               </div>
-              
+
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 leading-[1.1] tracking-tight max-w-4xl mx-auto">
                 Tra cứu & Gia hạn <span className="text-momo-500">BHYT</span> chỉ trong 3 phút
               </h1>
-              
+
               <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
                 Không gặp mặt, không phải chạy cơ quan. Tra cứu trực tuyến, gia hạn ngay trên MoMo.
               </p>
@@ -73,6 +73,67 @@ export default function HealthInsurancePage() {
             <div className="flex justify-center" id="search-form">
               <HealthInsuranceSearchForm />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2.5 Duration Selection */}
+      <section className="py-12 bg-slate-50 border-b border-slate-100">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-2">
+              Chọn thời hạn <span className="text-momo-500">gia hạn</span>
+            </h2>
+            <p className="text-slate-600">Linh hoạt lựa chọn gói bảo vệ phù hợp với nhu cầu của bạn</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {[
+              {
+                duration: "3 tháng",
+                slug: "3-thang",
+                price: "240.000đ",
+                desc: "Phù hợp trải nghiệm dịch vụ",
+                icon: <Clock className="w-8 h-8 text-blue-500" />
+              },
+              {
+                duration: "6 tháng",
+                slug: "6-thang",
+                price: "456.000đ",
+                desc: "Tiết kiệm 5% so với thuê lẻ",
+                icon: <CalendarCheck className="w-8 h-8 text-momo-500" />,
+                popular: true
+              },
+              {
+                duration: "12 tháng",
+                slug: "12-thang",
+                price: "864.000đ",
+                desc: "Tối ưu chi phí, bớt lo toan",
+                icon: <ShieldPlus className="w-8 h-8 text-green-500" />
+              },
+            ].map((item, i) => (
+              <Link
+                key={i}
+                href={`/bao-hiem-y-te/${item.slug}`}
+                className={`group relative p-8 rounded-3xl bg-white border-2 transition-all hover:shadow-2xl hover:-translate-y-1 flex flex-col items-center text-center ${item.popular ? 'border-momo-500 shadow-xl shadow-pink-100' : 'border-slate-100'}`}
+              >
+                {item.popular && (
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-momo-500 text-white text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full ring-4 ring-white shadow-lg">
+                    Phổ biến nhất
+                  </div>
+                )}
+                <div className="mb-6 p-4 rounded-2xl bg-slate-50 group-hover:bg-pink-50 transition-colors">
+                  {item.icon}
+                </div>
+                <h3 className="text-xl font-black text-slate-900 mb-2">{item.duration}</h3>
+                <p className="text-2xl font-black text-momo-500 mb-4">{item.price}</p>
+                <p className="text-xs text-slate-500 leading-relaxed min-h-[32px]">{item.desc}</p>
+
+                <div className="mt-8 w-full py-3 rounded-xl bg-slate-900 text-white text-sm font-bold group-hover:bg-momo-500 transition-colors">
+                  Chọn ngay
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

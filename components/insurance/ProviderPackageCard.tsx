@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { formatCurrency } from "@/lib/utils";
-import { Check, ChevronRight } from "lucide-react";
+import { Check, ChevronRight, CreditCard } from "lucide-react";
 import Link from "next/link";
 
 interface ProviderPackageCardProps {
@@ -26,15 +26,22 @@ export function ProviderPackageCard({
   const isPopular = tier.popular ?? (tier as { isPopular?: boolean }).isPopular ?? false;
 
   return (
-    <Card className="group hover:shadow-card-hover transition-all duration-300 border-2 hover:border-momo-200">
+    <Card className="group hover:shadow-card-hover transition-all duration-300 border-2 hover:border-momo-200 relative overflow-hidden">
       <CardContent className="pt-6">
-        <div className="flex items-start justify-between mb-4">
-          <h3 className="font-bold text-lg text-slate-900">{tier.label}</h3>
-          {isPopular && (
-            <Badge className="bg-momo-100 text-momo-600 border-momo-200">
-              Phổ biến
-            </Badge>
-          )}
+        <div className="mb-4">
+          <h3 className="font-bold text-lg text-slate-900 mb-2">{tier.label}</h3>
+          <div className="flex items-center gap-2 flex-wrap">
+            {isPopular && (
+              <Badge className="bg-momo-100 text-momo-600 border-momo-200">
+                Phổ biến
+              </Badge>
+            )}
+            {/* Payment Method Badge */}
+            <div className="inline-flex items-center gap-1 px-2.5 py-1 bg-amber-100 text-amber-700 rounded-full text-xs font-semibold">
+              <CreditCard className="w-3 h-3" />
+              Ví Trả Sau
+            </div>
+          </div>
         </div>
 
         <div className="mb-4">
@@ -44,6 +51,9 @@ export function ProviderPackageCard({
           </p>
           <p className="text-xs text-slate-500 mt-1">
             Bảo hiểm: {formatCurrency(tier.coverage)} / Miễn thường: {formatCurrency(tier.deductible)}
+          </p>
+          <p className="text-xs text-amber-600 font-semibold mt-2">
+            💳 Trả sau 30-60 ngày, 0% lãi suất
           </p>
         </div>
 

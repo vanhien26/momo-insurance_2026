@@ -6,6 +6,7 @@ import { ProviderGrid } from "@/components/insurance/ProviderGrid";
 import { PricingTable } from "@/components/insurance/PricingTable";
 import { FAQAccordion } from "@/components/insurance/FAQAccordion";
 import { InsuranceCTA } from "@/components/insurance/InsuranceCTA";
+import { PaymentFlexibilityBanner } from "@/components/insurance/PaymentFlexibilityBanner";
 import { BreadcrumbNav } from "@/components/insurance/BreadcrumbNav";
 import { SchemaMarkup } from "@/components/insurance/SchemaMarkup";
 import { SituationsHighlight } from "@/components/insurance/SituationsHighlight";
@@ -86,6 +87,12 @@ export default function AutoInsuranceVatChatPage() {
             So sánh giá tất cả gói {type.name.toLowerCase()}
           </h2>
           <PricingTable tiers={type.pricingTiers} providers={type.providers} />
+        </div>
+      </section>
+
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4">
+          <PaymentFlexibilityBanner variant="detailed" />
         </div>
       </section>
 

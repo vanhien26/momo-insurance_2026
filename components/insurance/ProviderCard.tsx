@@ -56,7 +56,7 @@ export function ProviderCard({
 
         <div className="flex items-end justify-between pt-4 border-t border-gray-50">
           <div>
-            {minPrice && (
+            {minPrice ? (
               <>
                 <p className="text-xs text-content-tertiary">Phí từ</p>
                 <p className="text-lg font-bold text-momo-600">
@@ -66,8 +66,8 @@ export function ProviderCard({
                   </span>
                 </p>
               </>
-            )}
-            {tierCount && (
+            ) : null}
+            {tierCount !== undefined && tierCount > 0 && (
               <p className="text-xs text-content-tertiary">{tierCount} gói</p>
             )}
           </div>

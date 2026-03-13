@@ -13,6 +13,7 @@ import { HeroBanner } from "@/components/insurance/HeroBanner";
 import { TrustSignals } from "@/components/insurance/TrustSignals";
 import { FAQAccordion } from "@/components/insurance/FAQAccordion";
 import { InsuranceCTA } from "@/components/insurance/InsuranceCTA";
+import { PaymentMethodHighlight } from "@/components/insurance/PaymentMethodHighlight";
 import { BreadcrumbNav } from "@/components/insurance/BreadcrumbNav";
 import { SchemaMarkup } from "@/components/insurance/SchemaMarkup";
 import { Card, CardContent } from "@/components/ui/card";
@@ -109,12 +110,19 @@ export default function AutoInsuranceHubPage() {
         </div>
       </section>
 
-      {/* 5. Section FAQ */}
+      {/* 5. Payment Method Highlight */}
+      <section className="py-12 bg-gradient-to-b from-slate-50 to-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <PaymentMethodHighlight variant="card" />
+        </div>
+      </section>
+
+      {/* 6. Section FAQ */}
       <section className="py-20 bg-white">
         <FAQAccordion faqs={product.faqs} productName={product.name.toLowerCase()} />
       </section>
       
-      {/* 6. Footer CTA */}
+      {/* 7. Footer CTA */}
       <InsuranceCTA
         ctaText={product.metadata.ctaText || "Mua bảo hiểm ngay"}
         ctaHref={product.metadata.ctaHref || `/${PRODUCT_SLUG}/vat-chat`}
