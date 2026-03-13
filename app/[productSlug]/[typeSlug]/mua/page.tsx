@@ -145,7 +145,6 @@ export default function MuaBaoHiemPage() {
                 </button>
               </div>
             </form>
-          )}
         </div>
 
         <p className="text-center text-xs text-slate-500 mt-6">
