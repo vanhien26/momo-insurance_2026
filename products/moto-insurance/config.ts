@@ -18,7 +18,7 @@ export const motoInsuranceProduct: InsuranceProduct = {
     shortName: "BH Xe Máy",
     icon: "Bike",
     description:
-        "So sánh và mua bảo hiểm xe máy tự nguyện online từ 6 nhà bảo hiểm uy tín (Bảo Việt, PVI, Liberty...). Bảo vệ xe khỏi mất cắp, tai nạn, thiên tai. Cấp đơn 5 phút trên MoMo.",
+        "So sánh và mua bảo hiểm xe máy tự nguyện online từ 6 nhà bảo hiểm uy tín (Bảo Việt, PVI, Liberty...). Bảo vệ xe khỏi mất cắp, tai nạn, thiên tai. Cấp đơn 5 phút, thanh toán linh hoạt với MoMo Ví Trả Sau 0% lãi.",
 
     // 1. Phân loại sản phẩm - Chỉ tập trung vào Tự Nguyện
     types: [
@@ -64,9 +64,9 @@ export const motoInsuranceProduct: InsuranceProduct = {
     metadata: {
         heroTitle: "Bảo hiểm xe máy tự nguyện",
         heroSubtitle:
-            "Bảo vệ xế yêu khỏi mất cắp, tai nạn, cháy nổ. Chỉ từ 120.000đ/năm. So sánh 6 nhà bảo hiểm uy tín và cấp đơn siêu tốc trên MoMo.",
+            "Bảo vệ xế yêu khỏi mất cắp, tai nạn, cháy nổ. Chỉ từ 120.000đ/năm. So sánh 6 nhà bảo hiểm uy tín. Thanh toán linh hoạt với Ví Trả Sau 0% lãi.",
         trustStats: [
-            { value: "800K+", label: "Hợp đồng xe máy", icon: "Users" },
+            { value: "80K+", label: "Hợp đồng xe máy", icon: "Users" },
             { value: "6", label: "Đối tác uy tín", icon: "Building2" },
             { value: "120K", label: "Phí chỉ từ/năm", icon: "Banknote" },
             { value: "24/7", label: "Hỗ trợ bồi thường", icon: "Clock" },
@@ -115,6 +115,11 @@ export const motoInsuranceProduct: InsuranceProduct = {
             question: "Xe máy điện có mua được bảo hiểm tự nguyện không?",
             answer:
                 "Có, hầu hết các nhà bảo hiểm trên MoMo đều hỗ trợ bảo hiểm cho xe máy điện (VinFast, Yadea, Pega...). Mức phí tùy thuộc giá trị và loại xe điện cụ thể.",
+        },
+        {
+            question: "Có thể thanh toán bảo hiểm xe máy bằng Ví Trả Sau không?",
+            answer:
+                "Có! Mua bảo hiểm xe máy qua MoMo, bạn có thể sử dụng MoMo Ví Trả Sau để thanh toán sau 30-60 ngày mà không phải trả lãi suất (nếu thanh toán đúng hạn). Đây là lựa chọn thanh toán linh hoạt giúp bạn quản lý dòng tiền tốt hơn.",
         },
     ],
 };

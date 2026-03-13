@@ -23,7 +23,7 @@ export const autoInsuranceProduct: InsuranceProduct = {
   shortName: "BH Ô Tô",
   icon: "Car",
   description:
-    "So sánh và mua bảo hiểm ô tô online từ 11 nhà bảo hiểm uy tín (PVI, Bảo Việt, MIC...). Ưu đãi tới 20%, cấp đơn siêu tốc 5 phút và hỗ trợ bồi thường 24/7 qua MoMo.",
+    "So sánh và mua bảo hiểm ô tô online từ 11 nhà bảo hiểm uy tín (PVI, Bảo Việt, MIC...). Ưu đãi tới 20%, cấp đơn siêu tốc 5 phút, hỗ trợ bồi thường 24/7 và thanh toán linh hoạt qua MoMo Ví Trả Sau 0% lãi.",
 
   // 1. Phân loại sản phẩm (Product Types)
   types: [
@@ -112,7 +112,7 @@ export const autoInsuranceProduct: InsuranceProduct = {
   metadata: {
     heroTitle: "Bảo hiểm ô tô trực tuyến",
     heroSubtitle:
-      "So sánh 11 nhà bảo hiểm hàng đầu Việt Nam. Cấp đơn siêu tốc, quản lý dễ dàng trên siêu ứng dụng MoMo.",
+      "So sánh 11 nhà bảo hiểm hàng đầu. Cấp đơn siêu tốc, quản lý dễ dàng trên MoMo. Thanh toán linh hoạt với Ví Trả Sau 0% lãi suất.",
     trustStats: [
       { value: "1.5M+", label: "Hợp đồng đã cấp", icon: "Users" },
       { value: "11", label: "Đối tác uy tín", icon: "Building2" },
@@ -163,6 +163,16 @@ export const autoInsuranceProduct: InsuranceProduct = {
       question: "Tôi có được chọn Garage sửa chữa không?",
       answer:
         "Đa số các gói bảo hiểm trên MoMo đều bao gồm quyền lợi 'Tự chọn cơ sở sửa chữa' (Garage chính hãng). Bạn nên kiểm tra chi tiết này trong bảng so sánh quyền lợi trước khi thanh toán.",
+    },
+    {
+      question: "MoMo có hỗ trợ thanh toán trả sau cho bảo hiểm ô tô không?",
+      answer:
+        "Có! Mua bảo hiểm qua MoMo, bạn có thể sử dụng MoMo Ví Trả Sau để thanh toán sau 30-60 ngày mà không phải trả lãi suất. Đây là giải pháp thanh toán linh hoạt giúp bạn quản lý tài chính tốt hơn.",
+    },
+    {
+      question: "Ví Trả Sau 0% lãi suất hoạt động như thế nào?",
+      answer:
+        "Ví Trả Sau cho phép bạn mua bảo hiểm ngay và thanh toán sau. Nếu bạn thanh toán đầy đủ trong hạn mức được cấp, sẽ không có bất kỳ lãi suất hay phí tính thêm nào. Điều này đặc biệt hữu ích khi bạn muốn linh hoạt với dòng tiền.",
     },
   ],
 };
