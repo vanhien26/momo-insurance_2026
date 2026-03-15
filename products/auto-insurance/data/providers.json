@@ -1,0 +1,222 @@
+[
+  {
+    "id": "bao-viet",
+    "name": "Bảo Việt",
+    "slug": "bao-viet",
+    "logo": "/images/providers/bao-viet.png",
+    "rating": 4.5,
+    "reviewCount": 12847,
+    "hotline": "1900 55 88 99",
+    "website": "https://baoviet.com.vn",
+    "description": "Tổng Công ty Bảo hiểm Bảo Việt là công ty bảo hiểm phi nhân thọ lớn nhất Việt Nam.",
+    "shortDesc": "Công ty BH lớn nhất VN, thương hiệu quốc gia",
+    "features": [
+      "Bồi thường nhanh 24h",
+      "Mạng lưới garage 500+",
+      "Hỗ trợ cứu hộ toàn quốc",
+      "App quản lý hợp đồng"
+    ],
+    "founded": 1965,
+    "origin": "Việt Nam"
+  },
+  {
+    "id": "pvi",
+    "name": "PVI",
+    "slug": "pvi",
+    "logo": "/images/providers/pvi.png",
+    "rating": 4.3,
+    "reviewCount": 8521,
+    "hotline": "1900 54 55 00",
+    "website": "https://pvi.com.vn",
+    "description": "Bảo hiểm PVI thuộc Tập đoàn Dầu khí Quốc gia Việt Nam.",
+    "shortDesc": "Thuộc tập đoàn Dầu khí, mạnh bảo hiểm tài sản",
+    "features": [
+      "Top 1 thị phần BH phi nhân thọ",
+      "Đối tác HDI (Đức)",
+      "Bồi thường minh bạch",
+      "Chuyên gia định giá riêng"
+    ],
+    "founded": 1996,
+    "origin": "Việt Nam"
+  },
+  {
+    "id": "pti",
+    "name": "PTI",
+    "slug": "pti",
+    "logo": "/images/providers/pti.png",
+    "rating": 4.2,
+    "reviewCount": 6340,
+    "hotline": "1900 0068",
+    "website": "https://pti.com.vn",
+    "description": "Bảo hiểm Bưu điện PTI tận dụng mạng lưới 63 tỉnh thành.",
+    "shortDesc": "Bưu điện, mạng lưới rộng 63 tỉnh",
+    "features": [
+      "Mạng lưới 63 tỉnh thành",
+      "Giám định nhanh tại chỗ",
+      "Phí cạnh tranh",
+      "Hỗ trợ online 24/7"
+    ],
+    "founded": 1998,
+    "origin": "Việt Nam"
+  },
+  {
+    "id": "mic",
+    "name": "MIC",
+    "slug": "mic",
+    "logo": "/images/providers/mic.png",
+    "rating": 4.1,
+    "reviewCount": 5820,
+    "hotline": "1900 9477",
+    "website": "https://mic.vn",
+    "description": "Bảo hiểm Quân đội MIC, thuộc Viettel.",
+    "shortDesc": "Quân đội, uy tín và bồi thường nhanh",
+    "features": [
+      "Bồi thường trong 3 ngày",
+      "App MIC Care",
+      "Garage ủy quyền 400+",
+      "Giao hợp đồng tận nơi"
+    ],
+    "founded": 2007,
+    "origin": "Việt Nam"
+  },
+  {
+    "id": "bic",
+    "name": "BIC",
+    "slug": "bic",
+    "logo": "/images/providers/bic.png",
+    "rating": 4,
+    "reviewCount": 4930,
+    "hotline": "1900 9456",
+    "website": "https://bic.vn",
+    "description": "BIC là công ty bảo hiểm thuộc Ngân hàng BIDV.",
+    "shortDesc": "BIDV, mạnh về bancassurance",
+    "features": [
+      "Mua qua BIDV SmartBanking",
+      "Giảm phí cho KH BIDV",
+      "Garage chính hãng",
+      "Hotline 24/7"
+    ],
+    "founded": 2006,
+    "origin": "Việt Nam"
+  },
+  {
+    "id": "bsh",
+    "name": "BSH",
+    "slug": "bsh",
+    "logo": "/images/providers/bsh.png",
+    "rating": 4,
+    "reviewCount": 3680,
+    "hotline": "1900 6025",
+    "website": "https://bsh.com.vn",
+    "description": "BSH Insurance thuộc Ngân hàng SHB.",
+    "shortDesc": "Ngân hàng SHB, gói linh hoạt",
+    "features": [
+      "Gói tùy chỉnh linh hoạt",
+      "Phí hợp lý",
+      "Mua online nhanh",
+      "Thanh toán qua SHB"
+    ],
+    "founded": 2005,
+    "origin": "Việt Nam"
+  },
+  {
+    "id": "liberty",
+    "name": "Liberty",
+    "slug": "liberty",
+    "logo": "/images/providers/liberty.png",
+    "rating": 4.4,
+    "reviewCount": 7250,
+    "hotline": "1800 5995",
+    "website": "https://libertyinsurance.com.vn",
+    "description": "Liberty Insurance Việt Nam thuộc tập đoàn Liberty Mutual (Mỹ).",
+    "shortDesc": "Mỹ, chuyên BH ô tô, dịch vụ quốc tế",
+    "features": [
+      "Garage ủy quyền chính hãng",
+      "Bồi thường không cần biên bản CA",
+      "Cứu hộ 24/7",
+      "Xe thay thế miễn phí"
+    ],
+    "founded": 2005,
+    "origin": "Mỹ"
+  },
+  {
+    "id": "generali",
+    "name": "Generali",
+    "slug": "generali",
+    "logo": "/images/providers/generali.png",
+    "rating": 4.2,
+    "reviewCount": 4150,
+    "hotline": "1900 2022 68",
+    "website": "https://generali.vn",
+    "description": "Generali Việt Nam thuộc Tập đoàn Generali (Ý).",
+    "shortDesc": "Ý, thương hiệu toàn cầu, app đầu tư",
+    "features": [
+      "App GenVita hiện đại",
+      "Gói combo BH toàn diện",
+      "Đối tác garage quốc tế",
+      "Tư vấn viên chuyên nghiệp"
+    ],
+    "founded": 2011,
+    "origin": "Ý"
+  },
+  {
+    "id": "msig",
+    "name": "MSIG",
+    "slug": "msig",
+    "logo": "/images/providers/msig.png",
+    "rating": 4.1,
+    "reviewCount": 3420,
+    "hotline": "1900 6192",
+    "website": "https://msig.com.vn",
+    "description": "MSIG Việt Nam thuộc Tập đoàn MS&AD Insurance (Nhật Bản).",
+    "shortDesc": "Nhật Bản, chất lượng dịch vụ cao",
+    "features": [
+      "Tiêu chuẩn Nhật Bản",
+      "Giám định nhanh",
+      "Garage chính hãng ưu tiên",
+      "Hỗ trợ song ngữ"
+    ],
+    "founded": 2007,
+    "origin": "Nhật Bản"
+  },
+  {
+    "id": "vbi",
+    "name": "VBI",
+    "slug": "vbi",
+    "logo": "/images/providers/vbi.png",
+    "rating": 3.9,
+    "reviewCount": 2890,
+    "hotline": "1900 6083",
+    "website": "https://vbi.vn",
+    "description": "VBI là công ty bảo hiểm thuộc Vietinbank.",
+    "shortDesc": "Vietinbank, giá cạnh tranh",
+    "features": [
+      "Phí thấp nhất phân khúc",
+      "Mua qua Vietinbank iPay",
+      "Bồi thường đơn giản",
+      "Garage ủy quyền 300+"
+    ],
+    "founded": 2008,
+    "origin": "Việt Nam"
+  },
+  {
+    "id": "pjico",
+    "name": "PJICO",
+    "slug": "pjico",
+    "logo": "/images/providers/pjico.png",
+    "rating": 3.8,
+    "reviewCount": 2340,
+    "hotline": "1900 545416",
+    "website": "https://pjico.com.vn",
+    "description": "PJICO thuộc Tập đoàn Xăng dầu Petrolimex.",
+    "shortDesc": "Petrolimex, mạnh vùng địa phương",
+    "features": [
+      "Mạnh xe thương mại",
+      "Phủ sóng địa phương",
+      "Phí linh hoạt",
+      "Đại lý toàn quốc"
+    ],
+    "founded": 1995,
+    "origin": "Việt Nam"
+  }
+]
