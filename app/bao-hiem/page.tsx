@@ -66,12 +66,12 @@ const INSURANCE_PRODUCTS = [
     href: "/bao-hiem-suc-khoe",
     icon: ShieldPlus,
     emoji: "💪",
-    desc: "Gói bảo hiểm sức khỏe toàn diện: tai nạn, bệnh hiểm nghèo, thai sản.",
+    desc: "Bảo hiểm bệnh hiểm nghèo Chubb Life: 37 bệnh, lên đến 5 tỷ/năm.",
     color: "from-emerald-500 to-green-600",
     bgLight: "bg-emerald-50",
     textColor: "text-emerald-600",
     tags: ["Tai nạn", "Bệnh hiểm nghèo"],
-    active: false,
+    active: true,
   },
   {
     name: "Bảo hiểm Xã hội",
@@ -215,11 +215,7 @@ export default function InsuranceHubPage() {
                           <h3 className="text-lg font-bold text-slate-900">
                             {product.name}
                           </h3>
-                          {!product.active && (
-                            <span className="text-[10px] font-bold uppercase tracking-wider text-amber-500 bg-amber-50 px-2 py-0.5 rounded-full">
-                              Sắp ra mắt
-                            </span>
-                          )}
+                          {/* No badge for active products */}
                         </div>
                       </div>
 

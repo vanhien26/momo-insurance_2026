@@ -1,0 +1,10 @@
+[
+  {
+    "id": "chubb",
+    "name": "Chubb Life Việt Nam",
+    "logo": "chubb-logo.png",
+    "rating": 4.9,
+    "benefits": ["Toàn cầu 50+ quốc gia", "Tài chính vững mạnh", "Bồi thường nhanh"],
+    "slug": "chubb-life"
+  }
+]
