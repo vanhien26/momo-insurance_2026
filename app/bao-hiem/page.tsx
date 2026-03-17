@@ -83,7 +83,7 @@ const INSURANCE_PRODUCTS = [
     bgLight: "bg-amber-50",
     textColor: "text-amber-600",
     tags: ["Tự nguyện", "Hưu trí"],
-    active: false,
+    active: true,
   },
 ];
 
